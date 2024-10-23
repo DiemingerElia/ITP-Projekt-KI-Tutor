@@ -10,6 +10,9 @@ let currentPage = "home";
 navButtons.forEach((element) => {
     element.addEventListener("click", (event) => {
         let newPage = event.target.id.toString().toLocaleLowerCase().replace("nav", "");
+
+        if(currentPage == newPage) return;
+
         document.querySelector("#" + newPage).style.display = "block";
         document.querySelector("#" + currentPage).style.display = "none";
     
