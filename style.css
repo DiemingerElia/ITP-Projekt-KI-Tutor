@@ -1,0 +1,46 @@
+html, body{
+    margin: 0;
+}
+
+main{
+    height: auto;
+}
+
+.allwrapperCenter{
+    display: flex;
+    justify-content: center;
+}
+
+.allwrapperWidth90{
+    width: 90%;
+}
+
+@media all and (min-width: 360px) {
+    
+    #header nav{
+        display: none;
+    }
+    
+    #header{
+        height: 150px;
+        width: 100%;
+        display: flex;
+        justify-content: right;
+    }
+
+    #burgermenu{
+        width: auto;
+        height: auto;
+        max-height: 100%;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+    }
+
+    #burgermenu img{
+        width: inherit;
+        height: inherit;    
+        max-width: inherit;
+        max-height: inherit;
+    }
+}
