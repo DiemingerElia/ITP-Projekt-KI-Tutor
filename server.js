@@ -14,37 +14,63 @@ function HandleRequest(req, res){
     let httpResponse = "";
 
     if(url.path == '/'){
-        httpResponse = FILE_SYSTEM.readFileSync(HTML_PATH, "utf-8");
-        res.writeHead(200, {'Content-Type': 'text/html'});   
+        try{
+            httpResponse = FILE_SYSTEM.readFileSync(HTML_PATH, "utf-8");
+            res.writeHead(200, {'Content-Type': 'text/html'});   
 
-        res.write(httpResponse);
-        res.end();
+            res.write(httpResponse);
+            res.end();
+        }
+        catch(err){
+            HandleError("Internal Server Error!", 500, res);
+        }
     }
-    else if(splitPath[1] == JS_PATH){
-        httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path, "utf-8");
-        res.writeHead(200, {'Content-Type': 'text/javascript'});
+    else if(splitPath[1] == JS_PATH && splitPath.length > 1){
+        try{
+            httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path, "utf-8");
+            res.writeHead(200, {'Content-Type': 'text/javascript'});
 
-        res.write(httpResponse);
-        res.end();
+            res.write(httpResponse);
+            res.end();
+        }
+        catch(err){
+            HandleError("Not Allowed!", 405, res);
+        }
+        
     }
-    else if(splitPath[1] == CSS_PATH){
-        httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path, "utf-8");
-        res.writeHead(200, {'Content-Type': 'text/stylesheet'});
+    else if(splitPath[1] == CSS_PATH && splitPath.length > 1){
+        try{
+            httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path, "utf-8");
+            res.writeHead(200, {'Content-Type': 'text/stylesheet'});
 
-        res.write(httpResponse);
-        res.end();
+            res.write(httpResponse);
+            res.end();
+        }
+        catch(err){
+            HandleError("Not Allowed!", 405, res);
+        }
     }
-    else if(splitPath[1] == IMG_PATH){
-        httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path);
-        res.writeHead(200, {'Content-Type': 'img/jpeg'});
+    else if(splitPath[1] == IMG_PATH && splitPath.length > 1){
+        try{
+            httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path);
+            res.writeHead(200, {'Content-Type': 'img/jpeg'});
 
-        res.write(httpResponse);
-        res.end();
+            res.write(httpResponse);
+            res.end();
+        }
+        catch(err){
+            HandleError("Not Allowed!", 405, res);
+        }
     }
     else{
         res.writeHead(404, {'Content-Type': 'plain/text'});
         res.end('404 Not Found!');
     }
+}
+
+function HandleError(displayedText, errCode, res){
+    res.writeHead(errCode, {'Content-Type': 'text/plain'});
+    res.end(errCode + " " + displayedText);
 }
 
 let server = HTTP.createServer(HandleRequest);
