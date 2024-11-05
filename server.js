@@ -10,11 +10,8 @@ const HTML_PATH = "./index.html";
 
 function HandleRequest(req, res){
     let url = URL.parse(req.url);
-    let httpResponse = "";
-
     let splitPath = url.path.split('/');
-    
-    console.log(splitPath[1]);
+    let httpResponse = "";
 
     if(url.path == '/'){
         httpResponse = FILE_SYSTEM.readFileSync(HTML_PATH, "utf-8");
