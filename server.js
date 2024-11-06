@@ -1,7 +1,8 @@
 const HTTP = require('http');
 const URL = require('node:url');
 const FILE_SYSTEM = require('node:fs');
-const PATH = require('path');
+const OPENAI = require('openai');
+
 
 const CSS_PATH = "css";
 const JS_PATH = "js";
@@ -66,6 +67,8 @@ function HandleRequest(req, res){
         res.writeHead(404, {'Content-Type': 'plain/text'});
         res.end('404 Not Found!');
     }
+
+    GetAiResponse();
 }
 
 function HandleError(displayedText, errCode, res){
@@ -75,3 +78,20 @@ function HandleError(displayedText, errCode, res){
 
 let server = HTTP.createServer(HandleRequest);
 server.listen(5500);
+
+async function GetAiResponse(){
+    const openai = new OpenAI();
+
+    const completion = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [
+            { role: "system", content: "You are a helpful assistant." },
+            {
+                role: "user",
+                content: "Write a haiku about recursion in programming.",
+            },
+        ],
+    });
+
+    console.log(completion.choices[0].message);
+}
