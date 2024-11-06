@@ -26,22 +26,19 @@ main{
     height: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root{
-        --backgroundColor: #262626;
-        --textColor: #FAFAFA;
-        --accentColor1: #4BA3FB;
-        --accentColor2: #979DAC;
-    }
+.darkTheme{
+    --backgroundColor: #262626;
+    --textColor: #FAFAFA;
+    --accentColor1: #4BA3FB;
+    --accentColor2: #979DAC;
 }
 
-@media (prefers-color-scheme: light) {
-    :root{
-        --backgroundColor: #fafafa; 
-        --textColor: #262626;
-        --accentColor1: #0466C8;
-        --accentColor2: #023E7D;
-    }
+
+.lightTheme{
+    --backgroundColor: #fafafa; 
+    --textColor: #262626;
+    --accentColor1: #0466C8;
+    --accentColor2: #023E7D;
 }
 
 @media all and (min-width: 340px) {
@@ -149,11 +146,11 @@ main{
     }
 
     input:checked + .toggle {
-        background-color: var(--accentColor1Light);
+        background-color: var(--accentColor1);
     }
 
     #dark input:checked + .toggle {
-        background-color: var(--accentColor1Dark);
+        background-color: var(--accentColor1);
     }
 
     input:checked + .toggle:before {
@@ -251,13 +248,16 @@ main{
         justify-content: center;
     }
 
+    #headerflex{
+        width: unset;
+    }
+
     #burgermenu{
         display: none;
     }
 
     #header nav{
         display: flex;
-        width:  100%;
     }
 
     #header nav button{
@@ -268,8 +268,23 @@ main{
         padding: 20px;
     }
 
-    #headerflex{
-        width: 10%;
-        height: fit-content;
+    .themeSwitcher{
+        display: flex;
+    }
+
+    .themeSwitcher i{
+        align-self: center;
+    }
+
+    #header nav button{
+        align-self: center;
     }
 }  
+
+@media all and (min-width: 1024px) {
+    
+    #footerwrapper{
+        display: flex;
+        justify-content: space-evenly;
+    }
+}
