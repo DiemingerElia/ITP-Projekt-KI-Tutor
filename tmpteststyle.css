@@ -1,0 +1,141 @@
+:root{
+    --backgroundColorLight: #fafafa;
+    --backgroundColorDark: #262626;
+    /* dark mode: #262626 */
+    --textColorLight: #262626;
+    --textColorDark: #FAFAFA;
+    /* dark mode: #262626 */
+    --accentColor1Light: #0466C8;
+    --accentColor1Dark: #4BA3FB;
+    /* dark mode: #4BA3FB */
+    --accentColor2Light: #023E7D;
+    --accentColor2Dark: #979DAC;
+    /* dark mode: #979DAC */
+}
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("./assets/fonts/Roboto-Medium.ttf");
+}
+
+@font-face { /*for buttons*/
+    font-family: "Roboto Bold";
+    src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+html, body{
+    /* background-color: var(--backgroundColor); */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.area{
+    display: flex;
+    justify-content: space-evenly;
+    height: 5rem;
+    width: 100%;
+}
+
+.area#light{
+    background-color: var(--backgroundColorLight);
+}
+
+.area#dark{
+    background-color: var(--backgroundColorDark);
+}
+
+.bttn{
+    font-family: "Roboto Bold";
+    height: min-content;
+    border-radius: 5rem;
+    border: 0;
+    box-shadow: #5555e8 0 10px 20px;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    user-select: none;
+    -webkit-user-select: none;
+    width: fit-content;
+    align-self: center;
+}
+
+.bttn#light{
+    background-color: var(--accentColor1Light);
+    color: var(--textColorLight);
+}
+
+.bttn#dark{
+    background-color: var(--accentColor1Dark);
+    color: var(--textColorDark);
+}
+
+/* copy pasted start */
+.toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    /* height: 2rem; */
+    border-radius: 3rem;
+}
+
+.toggle:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .toggle {
+    background-color: var(--accentColor1Light);
+}
+
+#dark input:checked + .toggle {
+    background-color: var(--accentColor1Dark);
+}
+
+input:checked + .toggle:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    align-self: center;
+    margin: 0 0.5rem;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.toggle.round {
+    border-radius: 34px;
+}
+
+.toggle.round:before {
+    border-radius: 50%;
+}
+
+/* copy pasted end */
+
+.themeSwitcher{
+    display: flex;
+    align-items: center;
+}

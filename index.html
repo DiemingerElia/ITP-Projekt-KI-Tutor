@@ -4,70 +4,97 @@
         <Title>Landing Page</Title>
         <meta charset="UTF-8">
         <meta lang="de">
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
     </head>
 
     <body>
         <header id="header">
+            <div id="headerflex">
+                <a href="./">
+                    <img src="./assets/imgs/HTL Logo.png" alt="Logo der HTL Waidhofen">
+                </a>
+                <button id="burgermenu"><i class="fa-solid fa-bars"></i></button>    
+            </div>
             <nav>
                 <button id="navHome"><i class="fa-solid fa-house"></i>&ensp;Startseite</button>
                 <button id="navTutor"><i class="fa-solid fa-brain-circuit"></i>&ensp;KI-Tutor</button>      
                 <button id="navAbout"><i class="fa-solid fa-user"></i>&ensp;Über uns</button>
                 <button id="navContact"><i class="fa-solid fa-phone"></i>&ensp;Kontakt</button>
-                <button id="navTheme">Mode: </button>
+                <div class="themeSwitcher">                
+                    <i class="fa-solid fa-sun fa-xl"></i>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="toggle round"></span>  
+                    </label>
+                    <i class="fa-solid fa-moon fa-xl"></i>  
+                </div>
             </nav>
         </header>
 
         <main id="home">
-            <h1>Home</h1>
-            
-            <div>
-                <h2>Was wir machen</h2>
-                <p>
-                    Lernen mit deinem persönlichen KI-Tutor<br><br>
+            <div class="allwrapperCenter">
+                <div class="allwrapperWidth90">
+                    <div class="allwrapperFullWidth">
+                        <span class="line"></span>
+                        <div class="allheadingwrapper">
+                            <div class="line"></div>
+                            <h1 class="allheading">Home</h1>
+                            <div class="line"></div>
+                        </div>
+                        <div class="allparagraphwrapper">
+                            <div class="allparagraph">
+                                <div>
+                                    <p>
+                                        <h3>Lernen mit deinem persönlichen KI-Tutor</h3><br><br>
 
-                    Entdecke eine neue Art des Lernens! Unser KI-Tutor bietet dir maßgeschneiderte Unterstützung in einer Vielzahl von 
-                    Fächern – wann und wo du willst. Ob Hausaufgabenhilfe, Prüfungsvorbereitung oder Vertiefung von Themen: Mit intelligenten, 
-                    auf dich abgestimmten Lernmethoden wirst du schneller und effizienter Fortschritte machen. Starte jetzt und erlebe, wie 
-                    einfach Lernen sein kann!<br><br>
-                    
-                    Dein Erfolg beginnt hier.
-                </p>
+                                        Entdecke eine neue Art des Lernens! Unser KI-Tutor bietet dir maßgeschneiderte Unterstützung in einer Vielzahl von 
+                                        Fächern – wann und wo du willst. Ob Hausaufgabenhilfe, Prüfungsvorbereitung oder Vertiefung von Themen: Mit intelligenten, 
+                                        auf dich abgestimmten Lernmethoden wirst du schneller und effizienter Fortschritte machen. Starte jetzt und erlebe, wie 
+                                        einfach Lernen sein kann!<br><br>
+                                        
+                                        Dein Erfolg beginnt hier.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3>Schnelle Antworten, wann immer du sie brauchst</h3>
+                                    <p>
+                                        Keine langen Wartezeiten mehr! Mit unserem KI-Tutor erhältst du sofort präzise Antworten auf deine Fragen. 
+                                        Egal, ob es um komplizierte Matheaufgaben oder schwierige Grammatikregeln geht – dein persönlicher Tutor liefert 
+                                        dir in Sekundenschnelle die richtige Lösung. Effizient, direkt und immer verfügbar.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3>Lerne jederzeit – flexibel und auf Abruf</h3>
+                                    <p>
+                                        Mit unserem KI-Tutor bestimmst du, wann und wo du lernst. Ob früh am Morgen oder spät in der Nacht – du hast rund 
+                                        um die Uhr Zugang zu personalisierten Lerninhalten und Antworten. Perfekt für deinen Alltag, ganz ohne feste Zeiten oder Termine. 
+                                        Lerne flexibel, wann es dir passt!
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3>Individuelle Unterstützung – genau auf dich abgestimmt</h3>
+                                    <p>
+                                        Jeder lernt anders, und unser KI-Tutor passt sich genau an deine Bedürfnisse an. Mit personalisierten Erklärungen, 
+                                        maßgeschneiderten Übungen und individuellen Lernplänen erhältst du die Unterstützung, die du brauchst, um effizient 
+                                        Fortschritte zu machen. Dein Lernweg – optimal auf dich abgestimmt!
+                                    </p>
+                                </div>
+
+                                <h2>
+                                    Starte jetzt und verbessere dein Lernen!
+                                    Melde dich noch heute an und erlebe, wie unser KI-Tutor dir hilft, schneller, einfacher und effizienter zu lernen. 
+                                    Hol dir die Unterstützung, die du verdienst – jederzeit, überall. Jetzt kostenlos testen!
+                                </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <h3>Schnelle Antworten, wann immer du sie brauchst</h3>
-                <p>
-                    Keine langen Wartezeiten mehr! Mit unserem KI-Tutor erhältst du sofort präzise Antworten auf deine Fragen. 
-                    Egal, ob es um komplizierte Matheaufgaben oder schwierige Grammatikregeln geht – dein persönlicher Tutor liefert 
-                    dir in Sekundenschnelle die richtige Lösung. Effizient, direkt und immer verfügbar.
-                </p>
-            </div>
-
-            <div>
-                <h3>Lerne jederzeit – flexibel und auf Abruf</h3>
-                <p>
-                    Mit unserem KI-Tutor bestimmst du, wann und wo du lernst. Ob früh am Morgen oder spät in der Nacht – du hast rund 
-                    um die Uhr Zugang zu personalisierten Lerninhalten und Antworten. Perfekt für deinen Alltag, ganz ohne feste Zeiten oder Termine. 
-                    Lerne flexibel, wann es dir passt!
-                </p>
-            </div>
-
-            <div>
-                <h3>Individuelle Unterstützung – genau auf dich abgestimmt</h3>
-                <p>
-                    Jeder lernt anders, und unser KI-Tutor passt sich genau an deine Bedürfnisse an. Mit personalisierten Erklärungen, 
-                    maßgeschneiderten Übungen und individuellen Lernplänen erhältst du die Unterstützung, die du brauchst, um effizient 
-                    Fortschritte zu machen. Dein Lernweg – optimal auf dich abgestimmt!
-                </p>
-            </div>
-
-            <h2>
-                Starte jetzt und verbessere dein Lernen!
-                Melde dich noch heute an und erlebe, wie unser KI-Tutor dir hilft, schneller, einfacher und effizienter zu lernen. 
-                Hol dir die Unterstützung, die du verdienst – jederzeit, überall. Jetzt kostenlos testen!
-            </h2>
         </main>
 
         <main id="about" style="display: none;">
@@ -139,9 +166,16 @@
         </main>
 
         <footer id="footer">
-            <a href="#">Impressum</a>
-            <a href="#">Datenschutz</a>
-            <a href="#">Nutzungsbedingungen</a>
+            <div class="allwrapperCenter">
+                <div class="allwrapperWidth90">
+                    <span class="line"></span>
+                    <div id="footerwrapper">
+                        <a href="#">Impressum</a>
+                        <a href="#">Datenschutz</a>
+                        <a href="#">Nutzungsbedingungen</a>
+                    </div>
+                </div>
+            </div>
         </footer>
 
         <script type="text/javascript" src="./js/index.js"></script>
