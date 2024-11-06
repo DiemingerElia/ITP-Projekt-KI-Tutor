@@ -67,8 +67,6 @@ function HandleRequest(req, res){
         res.writeHead(404, {'Content-Type': 'plain/text'});
         res.end('404 Not Found!');
     }
-
-    GetAiResponse();
 }
 
 function HandleError(displayedText, errCode, res){
@@ -79,8 +77,10 @@ function HandleError(displayedText, errCode, res){
 let server = HTTP.createServer(HandleRequest);
 server.listen(5500);
 
+GetAiResponse();
+
 async function GetAiResponse(){
-    const openai = new OpenAI();
+    const openai = new OPENAI.OpenAI();
 
     const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
