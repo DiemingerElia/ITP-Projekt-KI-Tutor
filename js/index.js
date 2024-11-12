@@ -3,6 +3,9 @@ const navHomeButton = document.querySelector("#navHome");
 const navAboutButton = document.querySelector("#navAbout");
 const navContactButton = document.querySelector("#navContact");
 const navTutorButton = document.querySelector("#navTutor");
+const tutorTypes = document.getElementsByName('option');
+
+const tutorChats = {};
 
 const navButtons = [navHomeButton, navAboutButton, navContactButton, navTutorButton];
 let currentPage = "home";
@@ -27,4 +30,16 @@ document.body.onload = function(){
         HTMLElement.style.display = "none";
     });
     document.querySelector("main#home").style.display = "block";
+}
+
+function LoadChats(){
+    for(let i = 0; i < tutorTypes.clientHeight; i++){
+        tutorChats[tutorTypes[i]] = localStorage.getItem(tutorTypes[i]);
+    }
+}
+
+function SaveChats(){
+    for(let i = 0; i < tutorChats.length; i++){
+        localStorage.setItem(tutorChats[i].key, tutorChats[i].value);
+    }
 }
