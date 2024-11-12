@@ -9,6 +9,7 @@ const CSS_PATH = "style.css";
 const JS_PATH = "js";
 const ASSET_PATH = "assets";
 const HTML_PATH = "./index.html";
+const API_PATH = "api"
 
 function HandleRequest(req, res){
     let url = URL.parse(req.url);
@@ -65,6 +66,20 @@ function HandleRequest(req, res){
             HandleError("Not Allowed!", 405, res);
         }
     }
+    else if(splitPath[1] == API_PATH && splitPath.length > 1){
+        let params = url.searchParams;
+        try{
+            httpResponse = askOpenAI(params.question, params.role);
+        }
+        catch(error){
+            httpResponse = "Es gab ein Problem mit der Anfrage.";
+        }
+
+        res.writeHead(200, {'Content-Type': 'text/plain'});
+
+        res.write(httpResponse);
+        res.end();
+    }
     else{
         res.writeHead(404, {'Content-Type': 'plain/text'});
         res.end('404 Not Found!');
@@ -77,23 +92,46 @@ function HandleError(displayedText, errCode, res){
 }
 
 let server = HTTP.createServer(HandleRequest);
-server.listen(5500);
+server.listen(80);
 
-//GetAiResponse();
-
-async function GetAiResponse(){
-    const openai = new OPENAI.OpenAI({ apiKey: process.env.OPENAI_API_KEY, organization: process.env.OPENAI_ORGANIZATION_ID, project: process.env.OPANAI_PROJECT_KEY });
-
-    const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
-        messages: [
-            { role: "system", content: "You are a helpful assistant." },
-            {
-                role: "user",
-                content: "Write a haiku about recursion in programming.",
+// OPENAI - API
+async function askOpenAI(question, role) {
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": process.env.OPENAI_API_AUTHORIZATION,
             },
-        ],
-    });
-
-    console.log(completion.choices[0].message);
-}
+            body: JSON.stringify({
+                model: "gpt-3.5-turbo",
+                messages: [
+                    { role: "system", content: role },
+                    { role: "user", content: content }
+                ],
+                max_tokens: 50,
+                temperature: 0.5,
+                frequency_penalty: 0.5,
+                presence_penalty: 0.8,
+                logit_bias: 0.5
+            })
+        });
+ 
+        if (!response.ok) {
+            const errorDetails = await response.json();
+            console.log("Fehlerdetails:", errorDetails);
+            throw new Error(`Request failed with status ${response.status}: ${response.statusText}`);
+        }
+ 
+        const data = await response.json();
+        if (!data.choices || !data.choices[0]) {
+            console.log("Unerwartete Antwortstruktur:", data);
+            throw new Error("Die Antwort enthält keine 'choices'-Daten.");
+        }
+ 
+        return data.choices[0].message.content.trim();
+    } catch (error) {
+        console.error("Fehler:", error.message);
+        return "Es gab ein Problem mit der Anfrage.";
+    }
+ }
