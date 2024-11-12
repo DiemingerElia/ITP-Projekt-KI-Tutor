@@ -26,22 +26,21 @@ main{
     height: auto;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root{
-        --backgroundColor: #262626;
-        --textColor: #FAFAFA;
-        --accentColor1: #4BA3FB;
-        --accentColor2: #979DAC;
-    }
+.darkTheme{
+    --backgroundColor: #262626;
+    --textColor: #FAFAFA;
+    --accentColor1: #4BA3FB;
+    --accentColor2: #979DAC;
+    --boxShadowColor: #5555e8;
 }
 
-@media (prefers-color-scheme: light) {
-    :root{
-        --backgroundColor: #fafafa; 
-        --textColor: #262626;
-        --accentColor1: #0466C8;
-        --accentColor2: #023E7D;
-    }
+
+.lightTheme{
+    --backgroundColor: #fafafa; 
+    --textColor: #262626;
+    --accentColor1: #6DB6FF;
+    --accentColor2: #023E7D;
+    --boxShadowColor: #FFFFFF;
 }
 
 @media all and (min-width: 340px) {
@@ -54,6 +53,10 @@ main{
     #header{
         height: 10vh;
         margin: 20px;
+    }
+
+    #header button{
+        cursor: pointer;
     }
 
     #headerflex{
@@ -90,7 +93,7 @@ main{
     }
 
     .line{
-        display: block;
+        display: none;
         height: 4px;
         width: 100%;
         background-color: var(--textColor);
@@ -149,11 +152,11 @@ main{
     }
 
     input:checked + .toggle {
-        background-color: var(--accentColor1Light);
+        background-color: var(--accentColor1);
     }
 
     #dark input:checked + .toggle {
-        background-color: var(--accentColor1Dark);
+        background-color: var(--accentColor1);
     }
 
     input:checked + .toggle:before {
@@ -197,7 +200,8 @@ main{
     .allheading{
         font-family: "Roboto Bold";
         font-size: 5rem;
-        padding: 0 32px;
+        padding: 0 0;
+        white-space: nowrap;
     }
 
     .allwrapperCenter{
@@ -229,10 +233,52 @@ main{
         font-size: 2rem;
     }
 
+    /* all about classes start with a */
+    /* about start */
+
+    .apersoncontainer{
+        max-width: 100%;
+        margin: 70px 0;
+        display: flex;
+        justify-self: center;
+    }
+
+    .apersoncontainer img{
+        max-width: 100%;
+    }
+
+    .apersonlink{
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+
+
+    /* about end */
+
 }
 
-@media all and (min-width: 481px){
+@media all and (min-width: 482px){
     
+    .line{
+        display: block;
+    }
+
+    .allheading{
+        padding: 0 32px;
+    }
+
     /* #footerwrapper{
         display: flex;
         justify-content: space-between;
@@ -242,7 +288,19 @@ main{
         font-size: 2rem;
     }
     
+    /* about start */
+    .apersoncontainer img{
+        max-width: 75%;
+        display: flex;
+        justify-self: center;
+    }
+    /* about end */
 }
+
+/* 
+@media all and (min-width: ) {
+    
+} */
 
 @media all and (min-width: 768px){
     
@@ -251,13 +309,16 @@ main{
         justify-content: center;
     }
 
+    #headerflex{
+        width: unset;
+    }
+
     #burgermenu{
         display: none;
     }
 
     #header nav{
         display: flex;
-        width:  100%;
     }
 
     #header nav button{
@@ -268,8 +329,62 @@ main{
         padding: 20px;
     }
 
-    #headerflex{
-        width: 10%;
-        height: fit-content;
+    .themeSwitcher{
+        display: flex;
     }
+
+    .themeSwitcher i{
+        align-self: center;
+    }
+
+    #header nav button{
+        align-self: center;
+    }
+
+    /* about start */
+    .apersoncontainer{
+        display: flex;
+        margin: 50px 0;
+    }
+
+    .apersoncontainer img{
+        max-width: 35%;
+    }
+
+    .apersondesc{
+        padding: 30px;
+    }
+
+    .apersondesc h3{
+        text-align: center;
+    }
+
+    /* about end */
+
 }  
+
+@media all and (min-width: 1024px) {
+    
+    #header{
+        justify-content: space-between;
+    }
+
+    #header button{
+        font-size: 1.5rem;
+    }
+
+    .allheading{
+        padding: 0 32px;
+    }
+
+    #footerwrapper{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* about start */
+    .apersoncontainer img{
+        max-width: 25%;
+    }
+    /* about end */
+}
