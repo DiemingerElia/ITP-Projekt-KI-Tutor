@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="de-at">
     <head>
         <Title>Landing Page</Title>
         <meta charset="UTF-8">
-        <meta lang="de">
+        <meta lang="de-at">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
     </head>
 
-    <body>
+    <body class="lightTheme">
         <header id="header">
             <div id="headerflex">
                 <a href="./">
@@ -18,14 +18,14 @@
                 <button id="burgermenu"><i class="fa-solid fa-bars"></i></button>    
             </div>
             <nav>
-                <button id="navHome"><i class="fa-solid fa-house"></i>&ensp;Startseite</button>
-                <button id="navTutor"><i class="fa-solid fa-brain-circuit"></i>&ensp;KI-Tutor</button>      
-                <button id="navAbout"><i class="fa-solid fa-user"></i>&ensp;Über uns</button>
-                <button id="navContact"><i class="fa-solid fa-phone"></i>&ensp;Kontakt</button>
+                <button id="navHome" title="Startseite"><i class="fa-solid fa-house"></i>&ensp;Startseite</button>
+                <button id="navTutor" title="KI-Tutor"><i class="fa-solid fa-brain-circuit"></i>&ensp;KI-Tutor</button>      
+                <button id="navAbout" title="Über uns"><i class="fa-solid fa-user"></i>&ensp;Über uns</button>
+                <button id="navContact" title="Kontakt"><i class="fa-solid fa-phone"></i>&ensp;Kontakt</button>
                 <div class="themeSwitcher">                
                     <i class="fa-solid fa-sun fa-xl"></i>
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" aria-label="Modus wechseln"><!--???-->
                         <span class="toggle round"></span>  
                     </label>
                     <i class="fa-solid fa-moon fa-xl"></i>  
@@ -85,11 +85,11 @@
                                     </p>
                                 </div>
 
-                                <h2>
+                                <h3>
                                     Starte jetzt und verbessere dein Lernen!
                                     Melde dich noch heute an und erlebe, wie unser KI-Tutor dir hilft, schneller, einfacher und effizienter zu lernen. 
                                     Hol dir die Unterstützung, die du verdienst – jederzeit, überall. Jetzt kostenlos testen!
-                                </h2>
+                                </h3>
                             </div>
                         </div>
                     </div>
@@ -104,22 +104,22 @@
             </div>
             <h2>Teammitglieder</h2>
             <div>
-                <img src="img/eliaDieminger.jpg">
+                <img src="assets/imgs/eliaDieminger.jpg">
                 <h3>Elia Dieminger</h3>
                 <p></p>
             </div>
             <div>
-                <img src="img/tobiasRiener.jpg">
+                <img src="assets/imgs/tobiasRiener.jpg">
                 <h3>Tobias Riener</h3>
                 <p>Jongliert meist bis spät in die Nacht mit Big Bugs und Big Macs.</p>
             </div>
             <div>
-                <img src="img/tobiasSchippany.jpg">
+                <img src="assets/imgs/tobiasSchippany.jpg">
                 <h3>Tobias Schippany</h3>
                 <p>Neben der IT Interesse sucht er meist nach neuen Traktoren, Unifi Produkten oder 3D Druck Tutorials.</p>
             </div>
             <div>
-                <img src="img/florianNestelberger.jpg">
+                <img src="assets/imgs/florianNestelberger.jpg">
                 <h3>Florian Nestelberger</h3>
                 <p>Probiert oft Stundenlang die besten Möglichkeiten für die CSS Datei.</p>
             </div>
@@ -302,8 +302,15 @@
         </main>
 
         <footer id="footer">
-            <a>Impressum & Datenschutz</a>
-            <a>Nutzungsbedingungen</a>
+            <div class="allwrapperCenter">
+                <div class="allwrapperWidth90">
+                    <span class="line"></span>
+                    <div id="footerwrapper">
+                        <a>Impressum & Datenschutz</a>
+                        <a>Nutzungsbedingungen</a>
+                    </div>
+                </div>
+            </div>
         </footer>
 
         <script type="text/javascript" src="./js/index.js"></script>

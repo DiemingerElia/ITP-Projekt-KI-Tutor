@@ -53,6 +53,10 @@ main{
         margin: 20px;
     }
 
+    #header button{
+        cursor: pointer;
+    }
+
     #headerflex{
         height: 90%;
         width: 100%;
@@ -283,6 +287,14 @@ main{
 
 @media all and (min-width: 1024px) {
     
+    #header{
+        justify-content: space-between;
+    }
+
+    #header button{
+        font-size: 1.5rem;
+    }
+
     #footerwrapper{
         display: flex;
         justify-content: space-evenly;
