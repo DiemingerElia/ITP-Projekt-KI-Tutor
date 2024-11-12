@@ -28,14 +28,16 @@ function SaveChats(){
 }
 
 function ShowChatForTutor(tutor){
-    const chatElement = document.querySelector('chatElement');
+    document.querySelector('chatElement').children = "";
+
     tutorKeys = Object.keys(tutorChats[tutor]);
     for(let i = 0; i < tutorKeys.length; i++){
-        
+        ShowMessage(tutorKeys[i], tutorChats[tutor][tutorKeys[i]])
     }
 }
 
 function ShowMessage(role, message){
+    const chatElement = document.querySelector('chatElement');
     let paragraph = document.createElement("p");
     paragraph.innerHTML = message;
 
@@ -48,21 +50,22 @@ function ShowMessage(role, message){
     chatElement.appendChild(paragraph);
 }
 
-function SendMessage(tutor, message){
+function SendMessage(tutor, message, role){
     const xhttp = new XMLHttpRequest();
-    const apiUrl = window.location + "/api";
+    const apiUrl = window.location + "api";
     let apiAnswer = "";
 
     xhttp.open("GET", apiUrl, true);
+    xhttp.setRequestHeader("api-role", role);
+    xhttp.setRequestHeader("api-question", message);
     xhttp.responseType = "text";
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200) {
             apiAnswer = this.responseText;
         }
     }
-    xhr.send();
+    xhttp.send();
             
-    tutorChats[tutor]["KI-" + new Date().toISOString()] = apiAnswer;
-
-
+    //tutorChats[tutor]["KI-" + new Date().toISOString()] = apiAnswer;
+    console.log(apiAnswer);
 }

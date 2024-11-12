@@ -69,7 +69,7 @@ function HandleRequest(req, res){
     else if(splitPath[1] == API_PATH && splitPath.length > 1){
         let params = url.searchParams;
         try{
-            httpResponse = askOpenAI(params.question, params.role);
+            httpResponse = askOpenAI(req.headers['api-role'], req.header['api-question']);
         }
         catch(error){
             httpResponse = "Es gab ein Problem mit der Anfrage.";
@@ -95,6 +95,8 @@ let server = HTTP.createServer(HandleRequest);
 server.listen(80);
 
 // OPENAI - API
+askOpenAI("Du bist ein vielseitig informierter Assistent für Allgemeinwissen. Deine Aufgabe ist es, Nutzern zu helfen, indem du präzise und verständliche Antworten auf Fragen aus verschiedenen Wissensbereichen gibst, darunter Geschichte, Geographie, Naturwissenschaften, Politik und Kultur. Bleibe sachlich und objektiv, und wenn angebracht, füge interessante Fakten hinzu, um das Thema lebendig zu gestalten. Vermeide Spekulationen und sorge dafür, dass deine Informationen auf anerkannten und verlässlichen Quellen basieren. Dein Ton ist freundlich und informativ, sodass der Nutzer ein angenehmes und lehrreiches Erlebnis hat.", "Wer bist du?");
+console.log(process.env.OPENAI_API_AUTHORIZATION);
 async function askOpenAI(question, role) {
     try {
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
@@ -107,7 +109,7 @@ async function askOpenAI(question, role) {
                 model: "gpt-3.5-turbo",
                 messages: [
                     { role: "system", content: role },
-                    { role: "user", content: content }
+                    { role: "user", content: question }
                 ],
                 max_tokens: 50,
                 temperature: 0.5,
