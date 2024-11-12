@@ -23,12 +23,12 @@ navButtons.forEach((element) => {
 
 themeSwitcher.addEventListener('click', function (event) {
     if(themeSwitcher.checked){
-        document.body.classList.remove('lightheme');
-        document.body.classList.add('darktheme');
+        document.body.classList.remove('lightTheme');
+        document.body.classList.add('darkTheme');
     }
     else{
-        document.body.classList.remove('darktheme');
-        document.body.classList.add('lightheme');
+        document.body.classList.remove('darkTheme');
+        document.body.classList.add('lightTheme');
     }
 });
 
