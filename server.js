@@ -1,12 +1,13 @@
+require('dotenv').config();
 const HTTP = require('http');
 const URL = require('node:url');
 const FILE_SYSTEM = require('node:fs');
 const OPENAI = require('openai');
 
 
-const CSS_PATH = "css";
+const CSS_PATH = "style.css";
 const JS_PATH = "js";
-const IMG_PATH = "img";
+const ASSET_PATH = "assets";
 const HTML_PATH = "./index.html";
 
 function HandleRequest(req, res){
@@ -41,8 +42,8 @@ function HandleRequest(req, res){
     }
     else if(splitPath[1] == CSS_PATH && splitPath.length > 1){
         try{
-            httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path, "utf-8");
-            res.writeHead(200, {'Content-Type': 'text/stylesheet'});
+            httpResponse = FILE_SYSTEM.readFileSync(CSS_PATH, "utf-8");
+            res.writeHead(200, {'Content-Type': 'text/css'});
 
             res.write(httpResponse);
             res.end();
@@ -51,9 +52,10 @@ function HandleRequest(req, res){
             HandleError("Not Allowed!", 405, res);
         }
     }
-    else if(splitPath[1] == IMG_PATH && splitPath.length > 1){
+    else if(splitPath[1] == ASSET_PATH && splitPath.length > 1){
         try{
             httpResponse = FILE_SYSTEM.readFileSync(__dirname + url.path);
+            console.log(__dirname + url.path);
             res.writeHead(200, {'Content-Type': 'img/jpeg'});
 
             res.write(httpResponse);
@@ -77,10 +79,10 @@ function HandleError(displayedText, errCode, res){
 let server = HTTP.createServer(HandleRequest);
 server.listen(5500);
 
-GetAiResponse();
+//GetAiResponse();
 
 async function GetAiResponse(){
-    const openai = new OPENAI.OpenAI();
+    const openai = new OPENAI.OpenAI({ apiKey: process.env.OPENAI_API_KEY, organization: process.env.OPENAI_ORGANIZATION_ID, project: process.env.OPANAI_PROJECT_KEY });
 
     const completion = await openai.chat.completions.create({
         model: "gpt-4o-mini",
