@@ -14,7 +14,7 @@
 - Trello Board
 <br>
 - Text Dokument
-<h3>Teammitglieder einteilung: </h3>
+<h3>Teammitglieder Einteilung: </h3>
 <h4>HTML: </h4>
 - Tobias Schippany
 <br>
