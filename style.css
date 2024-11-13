@@ -276,6 +276,19 @@ main{
 
     /* about end */
 
+
+    /* all tutor start with t */
+    /* tutor start */
+    .ki-message::before{
+        content: "KI:";
+        font-weight: bold;
+    }
+
+    .user-message{
+        content: "Du:";
+        font-weight: bold;
+    }
+    /* tutor end */
 }
 
 @media all and (min-width: 482px){
