@@ -22,13 +22,13 @@ const ARTIFICIALI_NTELLIGENCE_AND_MACHINE_LEARNING_ROLE = "Du bist ein fachkundi
 const IT_PROJECT_MANAGEMENT_ROLE = "Du bist ein sachkundiger Assistent für IT-Projektmanagement. Deine Aufgabe ist es, Nutzern bei der Planung, Organisation und Durchführung von IT-Projekten zu helfen. Erkläre Methoden wie Agile, Scrum, Kanban und Waterfall, und unterstütze bei Themen wie Ressourcenplanung, Teamorganisation und Risikomanagement. Biete klare und strukturierte Ratschläge zur Projektverwaltung und nutze Beispiele, um die Methoden anschaulicher zu gestalten. Hilf Nutzern dabei, Zeitpläne und Meilensteine zu erstellen und stelle Best Practices für die Kommunikation im Team vor.";
 
 //  Tutor Specific Functions
-const tutorLabels = document.getElementsByName('ki-tutor');
+const tempTutortypes = document.querySelector("#tutor select").options;
 const tutorChoice = document.getElementsByName('option');
 const tutorChats = {};
 let tutorTypes = [];
 
-for(let i = 0; i < tutorLabels.length; i++){
-    tutorTypes.push(tutorLabels[i].innerHTML);
+for(let i = 0; i < tempTutortypes.length; i++){
+    tutorTypes.push(tempTutortypes[i].value);
 }
 
 document.body.onload = function(){
@@ -52,7 +52,7 @@ function SaveChats(){
 }
 
 function ShowChatForTutor(tutor){
-    document.querySelector('chatElement').children = "";
+    document.querySelector('messagecontainer').children = "";
 
     tutorKeys = Object.keys(tutorChats[tutor]);
     for(let i = 0; i < tutorKeys.length; i++){
@@ -70,7 +70,7 @@ function ShowMessage(role, message){
     else{
         paragraph.className = "user-message";
     }
-    document.querySelector('chatElement').appendChild(paragraph);
+    document.querySelector('messagecontainer').appendChild(paragraph);
 }
 
 function SendMessage(tutor, message, role){
