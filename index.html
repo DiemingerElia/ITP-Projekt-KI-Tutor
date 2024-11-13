@@ -8,9 +8,9 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
         <link rel="manifest" href="/img/favicon/site.webmanifest">
     </head>
 
@@ -30,7 +30,7 @@
                 <div class="themeSwitcher">                
                     <i class="fa-solid fa-sun fa-xl"></i>
                     <label class="switch">
-                        <input type="checkbox" aria-label="Modus wechseln"><!--???-->
+                        <input type="checkbox" aria-label="Modus wechseln" onclick="switchTheme()"><!--???-->
                         <span class="toggle round"></span>  
                     </label>
                     <i class="fa-solid fa-moon fa-xl"></i>  
@@ -120,38 +120,46 @@
                         </div>
                         <div class="apersoncontainer">
                             <img src="assets/imgs/eliaDieminger.jpg">
-                            <div class="apersondesc">
-                                <h3>Elia Dieminger</h3>
-                                <p></p>
-                                <p>Aufgaben: Dokumentation & Organisation des Projektes, HTML-Struktur der "Kontakt"- & "Über uns" Seite sowie Unterstützung bei den anderen Aufgaben.</p>
-                                <a href="https://github.com/DiemingerElia" class="apersonlink">Elia's GitHub</a>
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Elia Dieminger</h3>
+                                    <p></p>
+                                    <p>Aufgaben: Dokumentation & Organisation des Projektes, HTML-Struktur der "Kontakt"- & "Über uns" Seite sowie Unterstützung bei den anderen Aufgaben.</p>
+                                    <a href="https://github.com/DiemingerElia" class="apersonlink">Elia's GitHub</a>
+                                </div>
                             </div>
                         </div>
                         <div class="apersoncontainer">
                             <img src="assets/imgs/tobiasRiener.jpg">
-                            <div class="apersondesc">
-                                <h3>Tobias Riener</h3>
-                                <p>Jongliert meist bis spät in die Nacht mit Big Bugs und Big Macs.</p>
-                                <p>Aufgaben: Node.js & OpenAI-API-Integration also das komplette Backend.</p>
-                                <a href="https://github.com/RienerTobias" class="apersonlink">Tobias' GitHub</a>
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Tobias Riener</h3>
+                                    <p>Jongliert meist bis spät in die Nacht mit Big Bugs und Big Macs.</p>
+                                    <p>Aufgaben: Node.js & OpenAI-API-Integration also das komplette Backend.</p>
+                                    <a href="https://github.com/RienerTobias" class="apersonlink">Tobias' GitHub</a>
+                                </div>
                             </div>
                         </div>
                         <div class="apersoncontainer">
                             <img src="assets/imgs/tobiasSchippany.jpg">
-                            <div class="apersondesc">
-                                <h3>Tobias Schippany</h3>
-                                <p>Neben der IT Interesse sucht er meist nach neuen Traktoren, Unifi Produkten oder 3D Druck Tutorials.</p>
-                                <p>Aufgabe: Erstellung der HTML-Struktur.</p>
-                                <a href="https://github.com/SchippanyTobias" class="apersonlink">Tobias' GitHub</a>
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Tobias Schippany</h3>
+                                    <p>Neben der IT Interesse sucht er meist nach neuen Traktoren, Unifi Produkten oder 3D Druck Tutorials.</p>
+                                    <p>Aufgabe: Erstellung der HTML-Struktur.</p>
+                                    <a href="https://github.com/SchippanyTobias" class="apersonlink">Tobias' GitHub</a>
+                                </div>
                             </div>
                         </div>
                         <div class="apersoncontainer">
                             <img src="assets/imgs/florianNestelberger.jpg">
-                            <div class="apersondesc">
-                                <h3>Florian Nestelberger</h3>
-                                <p>Probiert oft Stundenlang die besten Möglichkeiten für die CSS Datei.</p>
-                                <p>Aufgabe: Das Komplette Design mittels CSS erstellen.</p>
-                                <a href="https://github.com/spectatorflo" class="apersonlink">Florian's GitHub</a>
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Florian Nestelberger</h3>
+                                    <p>Probiert oft Stundenlang die besten Möglichkeiten für die CSS Datei.</p>
+                                    <p>Aufgabe: Das Komplette Design mittels CSS erstellen.</p>
+                                    <a href="https://github.com/spectatorflo" class="apersonlink">Florian's GitHub</a>
+                                </div>
                             </div>
                         </div>
                         <h2>Projekt: </h2>
@@ -205,26 +213,19 @@
 
         <main id="tutor" style="display: none;">
             <aside>
-                <label name="ki-tutor" for="program">Programmier-Tutor</label>
-                <input name="option" type="radio">
-
-                <label name="ki-tutor" for="maths">Mathematik-Tutor</label>
-                <input name="option" type="radio">
+                <select name="tutors">
+                    <option value="ProgrammierTutor">Programmier Tutor</option>
+                    <option value="MatheTutor">Mathematik Tutor</option>
+                </select>
             </aside>
-
-            <br>
-
-            <div>
-                <label>Fragen Sie mich etwas:</label>
-                <input type="text">
-
-                <button>Absenden</button>
+            <div id="messagecontainer">
+                <p>Lorem Ipsum dolor sit ahmet</p>
+                <p>Lorem Ipsum dolor sit ahmet</p>
+                <p>Lorem Ipsum dolor sit ahmet</p>
             </div>
-
-            <div id="chatElement">
-                <p>Lorem Ipsum dolor sit ahmet</p>
-                <p>Lorem Ipsum dolor sit ahmet</p>
-                <p>Lorem Ipsum dolor sit ahmet</p>
+            <div>
+                <input type="text">
+                <button>Absenden</button>
             </div>
         </main>
 
