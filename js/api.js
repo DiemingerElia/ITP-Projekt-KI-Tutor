@@ -38,8 +38,8 @@ document.body.onload = function(){
 function LoadChats(){
     for(let i = 0; i < tutorTypes.length; i++){
         tutorChats[tutorTypes[i]] = JSON.parse(localStorage.getItem(tutorTypes[i]));
-        if(tutorChats[tutorTypes[i]] === undefined){
-            tutorChats[tutorTypes[i]] = { 'tutor': tutorTypes[i], };
+        if(tutorChats[tutorTypes[i]] === null || tutorChats[tutorTypes[i]] === undefined){
+            tutorChats[tutorTypes[i]] = new Object();
         }
     }
 }
