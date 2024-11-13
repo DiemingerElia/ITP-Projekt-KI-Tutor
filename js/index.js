@@ -19,10 +19,11 @@ navButtons.forEach((element) => {
         document.querySelector("#" + currentPage).style.display = "none";
     
         currentPage = newPage;
+        document.title = document.querySelector('#nav' + newPage.charAt(0).toUpperCase() + newPage.slice(1)).innerHTML.split('</i>').pop().trim();
     });
 });
 
-themeSwitcher.addEventListener('click', function (event) {
+themeSwitcher.addEventListener('change', function (event) {
     if(themeSwitcher.checked){
         document.body.classList.remove('lightTheme');
         document.body.classList.add('darkTheme');
@@ -39,4 +40,15 @@ document.body.onload = function(){
         HTMLElement.style.display = "none";
     });
     document.querySelector("main#home").style.display = "block";
+
+    if(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches){
+        themeSwitcher.checked = true;
+        document.body.classList.remove('lightTheme');
+        document.body.classList.add('darkTheme');
+    }
+    else{
+        themeSwitcher.checked = false;
+        document.body.classList.remove('darkTheme');
+        document.body.classList.add('lightTheme');
+    }
 }
