@@ -31,9 +31,13 @@ for(let i = 0; i < tutorLabels.length; i++){
     tutorTypes.push(tutorLabels[i].innerHTML);
 }
 
+document.body.onload = function(){
+    LoadChats();
+}
+
 function LoadChats(){
     for(let i = 0; i < tutorTypes.length; i++){
-        tutorChats[tutorTypes[i]] = localStorage.getItem(tutorTypes[i]);
+        tutorChats[tutorTypes[i]] = JSON.parse(localStorage.getItem(tutorTypes[i]));
         if(tutorChats[tutorTypes[i]] === undefined){
             tutorChats[tutorTypes[i]] = { 'tutor': tutorTypes[i], };
         }
@@ -57,7 +61,6 @@ function ShowChatForTutor(tutor){
 }
 
 function ShowMessage(role, message){
-    const chatElement = document.querySelector('chatElement');
     let paragraph = document.createElement("p");
     paragraph.innerHTML = message;
 
@@ -67,7 +70,7 @@ function ShowMessage(role, message){
     else{
         paragraph.className = "user-message";
     }
-    chatElement.appendChild(paragraph);
+    document.querySelector('chatElement').appendChild(paragraph);
 }
 
 function SendMessage(tutor, message, role){
@@ -87,5 +90,6 @@ function SendMessage(tutor, message, role){
     xhttp.send();
             
     //tutorChats[tutor]["KI-" + new Date().toISOString()] = apiAnswer;
+    //Object.defineProperty()
     console.log(apiAnswer);
 }
