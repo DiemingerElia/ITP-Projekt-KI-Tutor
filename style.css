@@ -303,6 +303,10 @@ main{
         display: flex;
         justify-self: center;
     }
+
+    .apersondescwrapper{
+        width: 45%;
+    }
     /* about end */
 }
 
@@ -365,7 +369,6 @@ main{
 
     .apersondesc{
         padding: 30px;
-        width: 45%;
     }
 
     .apersondesc h3{
