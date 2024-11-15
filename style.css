@@ -279,6 +279,62 @@ main{
 
     /* all tutor start with t */
     /* tutor start */
+
+    #ttutorselectwrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #ttutorselect{
+        text-align: center;
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        border: none;
+        font-size: 1.3rem;
+    }
+
+    select::before{
+        content: '\f0d7';
+    }
+
+    #tinputareawrapper{
+        position: absolute;
+        bottom: 0vh;
+        left: 0vw;
+        width: 100%;
+        display: flex;
+    }
+
+    #tinputarea{
+        width: 90%;
+        border-radius: 99px;
+        border: 2px solid var(--accentColor1);
+        background-color: var(--backgroundColor);
+        color: var(--textColor);
+    }
+
+    #tinputarea:focus{
+        text-decoration: none;
+        outline: none;
+        border: 2px solid var(--accentColor1);
+        background-color: var(--backgroundColor);
+    }
+
+
+    #tinputsend{
+        width: 10%;
+        border-radius: 99px;
+        aspect-ratio: 1/1;
+        background-color: var(--accentColor1);
+        border: none;
+    }
+
+    #tinputsend i{
+        min-width: 100%;
+    }
+
+    /* except this ones lol */
     .ki-message::before{
         content: "KI:";
         font-weight: bold;

@@ -4,17 +4,17 @@
         <Title>Landing Page</Title>
         <meta charset="UTF-8">
         <meta lang="de-at">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" interactive-widget=resizes-content">
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
 
         <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/img/favicon/site.webmanifest">
+        <link rel="manifest" href="assets/icons/favicon/site.webmanifest    ">
     </head>
 
-    <body class="lightTheme">
+    <body class="darkTheme">
         <header id="header">
             <div id="headerflex">
                 <a href="./">
@@ -102,7 +102,7 @@
             </div>
         </main>
 
-        <main id="about" style="display: block;">
+        <main id="about" style="display: none;">
             <div class="allwrapperCenter">
                 <div class="allwrapperWidth90">
                     <div class="allwrapperFullWidth">
@@ -158,7 +158,7 @@
                                     <h3>Florian Nestelberger</h3>
                                     <p>Probiert oft Stundenlang die besten Möglichkeiten für die CSS Datei.</p>
                                     <p>Aufgabe: Das Komplette Design mittels CSS erstellen.</p>
-                                    <a href="https://github.com/spectatorflo" class="apersonlink">Florian's GitHub</a>
+                                    <a href="https://github.com/NestelbergerFlorian" class="apersonlink">Florian's GitHub</a>
                                 </div>
                             </div>
                         </div>
@@ -211,9 +211,9 @@
             </div>
         </main>
 
-        <main id="tutor" style="display: none;">
-            <aside>
-                <select name="tutors">
+        <main id="tutor" style="display: block;">
+            <aside id="ttutorselectwrapper">
+                <select name="tutors" id="ttutorselect">
                     <option value="ProgrammierTutor">Programmier Tutor</option>
                     <option value="MatheTutor">Mathematik Tutor</option>
                 </select>
@@ -223,9 +223,9 @@
                 <p>Lorem Ipsum dolor sit ahmet</p>
                 <p>Lorem Ipsum dolor sit ahmet</p>
             </div>
-            <div>
-                <input type="text">
-                <button>Absenden</button>
+            <div id="tinputareawrapper">
+                <input type="text" id="tinputarea" onclick="scrollToBottom()">
+                <button id="tinputsend"><i class="fa-solid fa-paper-plane-top"></i></button>
             </div>
         </main>
 
