@@ -30,7 +30,7 @@ main{
     --backgroundColor: #262626;
     --textColor: #FAFAFA;
     --accentColor1: #4BA3FB;
-    --accentColor2: #979DAC;
+    /* --accentColor2: #979DAC; */
     --boxShadowColor: #5555e8;
 }
 
@@ -39,7 +39,7 @@ main{
     --backgroundColor: #fafafa; 
     --textColor: #262626;
     --accentColor1: #6DB6FF;
-    --accentColor2: #023E7D;
+    /* --accentColor2: #023E7D; */
     --boxShadowColor: #FFFFFF;
 }
 
@@ -119,7 +119,7 @@ main{
     #footer a{
         text-decoration: none;
         color: var(--accentColor1);
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
 
     /* footer end */
@@ -301,6 +301,8 @@ main{
     #messagecontainer{
         width: 100%;
         overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
         margin-bottom: 2rem;
     }
 
@@ -380,7 +382,7 @@ main{
     } */
 
     #footer a{
-        font-size: 1rem;
+        font-size: 2rem;
     }
     
     /* about start */
@@ -405,37 +407,7 @@ main{
     
     #header{
         display: flex;
-        justify-content: center;
-    }
-
-    #headerflex{
-        width: unset;
-    }
-
-    #burgermenu{
-        display: none;
-    }
-
-    #header nav{
-        display: flex;
         justify-content: space-between;
-    }
-
-    #header nav button{
-        color: var(--textColor);
-        background-color: var(--backgroundColor);
-        border: 0;
-        height: min-content;
-        padding: 20px;
-        font-size: 1rem;
-    }
-
-    .themeSwitcher{
-        display: flex;
-    }
-
-    .themeSwitcher i{
-        align-self: center;
     }
 
     #header nav button{
@@ -464,6 +436,40 @@ main{
     /* about end */
 
 }  
+
+@media all and (min-width: 771px){
+
+    #header nav button{
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        border: 0;
+        height: min-content;
+        padding: 20px;
+        font-size: 1rem;
+    }
+
+    #header nav{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    
+    #headerflex{
+        width: unset;
+    }
+
+    #burgermenu{
+        display: none;
+    }
+
+    .themeSwitcher{
+        display: flex;
+    }
+
+    .themeSwitcher i{
+        align-self: center;
+    }
+}
 
 @media all and (min-width: 1024px) {
     
