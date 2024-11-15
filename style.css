@@ -119,7 +119,7 @@ main{
     #footer a{
         text-decoration: none;
         color: var(--accentColor1);
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     /* footer end */
@@ -298,8 +298,14 @@ main{
         content: '\f0d7';
     }
 
+    #messagecontainer{
+        width: 100%;
+        overflow-y: scroll;
+        margin-bottom: 2rem;
+    }
+
     #tinputareawrapper{
-        position: absolute;
+        position: sticky;
         bottom: 0vh;
         left: 0vw;
         width: 100%;
@@ -309,16 +315,19 @@ main{
     #tinputarea{
         width: 90%;
         border-radius: 99px;
+        padding: 0 10px;
         border: 2px solid var(--accentColor1);
         background-color: var(--backgroundColor);
         color: var(--textColor);
     }
 
     #tinputarea:focus{
-        text-decoration: none;
-        outline: none;
+        width: 90%;
+        border-radius: 99px;
+        padding: 0 10px;
         border: 2px solid var(--accentColor1);
         background-color: var(--backgroundColor);
+        color: var(--textColor);
     }
 
 
@@ -335,12 +344,20 @@ main{
     }
 
     /* except this ones lol */
+    .ki-message{
+        text-align: left;
+    }
+
+    .user-message{
+        text-align: right;
+    }
+
     .ki-message::before{
         content: "KI:";
         font-weight: bold;
     }
 
-    .user-message{
+    .user-message::before{
         content: "Du:";
         font-weight: bold;
     }
@@ -363,7 +380,7 @@ main{
     } */
 
     #footer a{
-        font-size: 2rem;
+        font-size: 1rem;
     }
     
     /* about start */
