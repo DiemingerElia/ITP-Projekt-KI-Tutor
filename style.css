@@ -364,6 +364,114 @@ main{
         font-weight: bold;
     }
     /* tutor end */
+
+    
+    /* all contact classes start with c */
+    /* contact start */
+    .cinputwrapper input, .cinputwrapper textarea{
+        outline: none;
+        border: none;
+        border-bottom: 2px solid var(--textColor);
+        opacity: 0.5;
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        margin: 15px 0;
+        font-size: 1.2rem;
+        width: 100%;
+        font-family: "Roboto Regular";
+        resize: vertical;
+    }
+
+    .cinputwrapper input:focus, .cinputwrapper textarea:focus{
+        opacity: 1;
+        border-bottom: 2px solid var(--accentColor1);
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+    }
+
+    .cinputwrapper textarea{
+        height: 150px;
+    }
+
+    #ccentersend{
+        display: flex;
+        width: 100%;
+        justify-content: right;
+    }
+
+    #csend{
+        display: flex;
+        justify-self: center;
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+
+    #cmail{
+        color: var(--textColor);
+        text-decoration: none;
+    }
+
+    #ccenterclinkwrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    #clinkwrapper{
+        width: 65%;
+        display: block;
+    }
+
+    #clinkwrapper a{
+        text-decoration: none;
+        color: var(--textColor);
+        font-size: 1.2rem;
+    }
+
+    #clinkwrapper a i{
+        width: 16px;
+    }
+
+    #cgooglemaps{
+        width: 100%
+    }
+
+    #ccenteropeninapp{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #copeninapp{
+        display: flex;
+        justify-self: center;
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+    /* contact end */
 }
 
 @media all and (min-width: 482px){
