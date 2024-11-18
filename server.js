@@ -9,7 +9,7 @@ const CSS_PATH = "style.css";
 const JS_PATH = "js";
 const ASSET_PATH = "assets";
 const HTML_PATH = "./index.html";
-const API_PATH = "api"
+const API_PATH = "api";
 
 async function HandleRequest(req, res){
     let url = URL.parse(req.url);
@@ -67,18 +67,22 @@ async function HandleRequest(req, res){
         }
     }
     else if(splitPath[1] == API_PATH && splitPath.length > 1){
-        let params = url.searchParams;
         try{
-            httpResponse = await askOpenAI(req.headers['api-role'], req.header['api-question']);
+            askOpenAI(req.headers['api-role'], req.headers['api-question']).then(answer => {
+                httpResponse = answer;
+                res.writeHead(200, {'Content-Type': 'text/plain'});
+
+                res.write(httpResponse);
+                res.end();
+            });
         }
         catch(error){
             httpResponse = "Es gab ein Problem mit der Anfrage.";
+            res.writeHead(200, {'Content-Type': 'text/plain'});
+
+            res.write(httpResponse);
+            res.end();
         }
-
-        res.writeHead(200, {'Content-Type': 'text/plain'});
-
-        res.write(httpResponse);
-        res.end();
     }
     else{
         res.writeHead(404, {'Content-Type': 'plain/text'});
@@ -95,7 +99,7 @@ let server = HTTP.createServer(HandleRequest);
 server.listen(80);
 
 // OPENAI - API
-//const response = askOpenAI("Du bist eine KI.", "Wer bist du?");
+//const response = askOpenAI("Du bist ein kompetenter und geduldiger Mathematik-Assistent. Deine Aufgabe ist es, den Nutzern bei mathematischen Fragestellungen zu helfen, sei es in Algebra, Geometrie, Analysis, Statistik oder anderen Bereichen der Mathematik. Erkläre die Konzepte Schritt für Schritt und vereinfache komplexe Themen, indem du klare Beispiele und Illustrationen verwendest. Sei dabei präzise und vermeide unnötige Fachbegriffe, es sei denn, der Nutzer fragt explizit danach. Wenn ein Nutzer eine Lösung für eine Aufgabe sucht, führe ihn durch die Lösungsmethode, anstatt nur die Antwort zu geben, und ermutige ihn, die Schritte selbst nachzuvollziehen.", "Wer bist du?");
 //console.log(response);
 //console.log(process.env.OPENAI_API_AUTHORIZATION);
 async function askOpenAI(role, question) {
@@ -104,7 +108,7 @@ async function askOpenAI(role, question) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": process.env.OPENAI_API_AUTHORIZATION,
+                "Authorization": process.env.OPENAI_PRIVATE,
             },
             body: JSON.stringify({
                 model: "gpt-3.5-turbo",

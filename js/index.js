@@ -51,4 +51,5 @@ document.body.onload = function(){
         document.body.classList.remove('darkTheme');
         document.body.classList.add('lightTheme');
     }
+    APILoad();
 }

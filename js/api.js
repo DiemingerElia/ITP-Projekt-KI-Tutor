@@ -31,8 +31,18 @@ for(let i = 0; i < tempTutortypes.length; i++){
     tutorTypes.push(tempTutortypes[i].value);
 }
 
-document.body.onload = function(){
+document.querySelector('main#tutor > div > button').addEventListener("click", function(event){
+    event.preventDefault();
+    SendMessage(document.querySelector("#tutor select").value, GENERALKNOWLEDGE_ROLE);
+});
+
+document.querySelector("#tutor select").addEventListener('change', function(event){
+    ShowChatForTutor(document.querySelector("#tutor select").value);
+});
+
+function APILoad(){
     LoadChats();
+    ShowChatForTutor(document.querySelector("#tutor select").value);
 }
 
 function LoadChats(){
@@ -52,7 +62,7 @@ function SaveChats(){
 }
 
 function ShowChatForTutor(tutor){
-    document.querySelector('messagecontainer').children = "";
+    document.querySelector('#messagecontainer').innerHTML = "";
 
     tutorKeys = Object.keys(tutorChats[tutor]);
     for(let i = 0; i < tutorKeys.length; i++){
@@ -62,34 +72,38 @@ function ShowChatForTutor(tutor){
 
 function ShowMessage(role, message){
     let paragraph = document.createElement("p");
-    paragraph.innerHTML = message;
+    paragraph.innerText = message;
 
     if(role.includes("KI")){
         paragraph.className = "ki-message";
     }
-    else{
+    else if(role.includes("USER")){
         paragraph.className = "user-message";
     }
-    document.querySelector('messagecontainer').appendChild(paragraph);
+    document.querySelector('#messagecontainer').appendChild(paragraph);
 }
 
-function SendMessage(tutor, message, role){
-    const xhttp = new XMLHttpRequest();
-    const apiUrl = window.location + "api";
-    let apiAnswer = "";
+function SendMessage(tutor, apiRole){
+    const question = document.querySelector('main#tutor > div > input').value;
+    document.querySelector('main#tutor > div > input').value = "";
+    tutorChats[tutor]["_USER_" + new Date().toISOString()] = question;
+    SaveChats();
+    ShowMessage("USER", question);
 
-    xhttp.open("GET", apiUrl, true);
-    xhttp.setRequestHeader("api-role", role);
-    xhttp.setRequestHeader("api-question", message);
-    xhttp.responseType = "text";
-    xhttp.onreadystatechange = function(){
-        if (this.readyState == 4 && this.status == 200) {
-            apiAnswer = this.responseText;
-        }
+    const apiUrl = window.location + "api";
+    try{
+        const apiAnswer = fetch(apiUrl, {
+            headers: {
+                "api-role": apiRole,
+                "api-question": question,
+            }
+        }).then(apiResponse => apiResponse.text()).then( answer => {
+            tutorChats[tutor]["_KI_" + new Date().toISOString()] = answer;
+            SaveChats();
+            ShowMessage("KI", answer);
+        });
     }
-    xhttp.send();
-            
-    //tutorChats[tutor]["KI-" + new Date().toISOString()] = apiAnswer;
-    //Object.defineProperty()
-    console.log(apiAnswer);
+    catch(error){
+        console.log(error);
+    }
 }
