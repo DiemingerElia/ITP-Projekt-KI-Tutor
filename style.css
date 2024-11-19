@@ -122,6 +122,10 @@ main{
         font-size: 1.3rem;
     }
 
+    #footerwrapper{
+        cursor: pointer;
+    }
+
     /* footer end */
 
     /* themeToggle start */
@@ -327,9 +331,11 @@ main{
         width: 90%;
         border-radius: 99px;
         padding: 0 10px;
+        border: none;
         border: 2px solid var(--accentColor1);
         background-color: var(--backgroundColor);
         color: var(--textColor);
+        outline: none;
     }
 
 
@@ -355,14 +361,17 @@ main{
     }
 
     .ki-message::before{
-        content: "KI:";
+        content: "\f544";
         font-weight: bold;
+        font-family: "FontAwesome";
     }
 
     .user-message::before{
-        content: "Du:";
+        content: "\f007";
         font-weight: bold;
+        font-family: "FontAwesome";
     }
+
     /* tutor end */
 
     
@@ -569,6 +578,10 @@ main{
         display: flex;
         justify-content: space-between;
     }
+
+    /* #header nav#navTutor:{
+
+    } */
 
     
     #headerflex{
