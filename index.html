@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="de-at">
     <head>
-        <Title>Landing Page</Title>
+        <Title>Startseite</Title>
         <meta charset="UTF-8">
         <meta lang="de-at">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" interactive-widget=resizes-content">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" interactive-widget="resizes-content">
         <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
 
@@ -17,8 +17,8 @@
     <body class="darkTheme">
         <header id="header">
             <div id="headerflex">
-                <a href="./">
-                    <img src="./assets/imgs/HTL Logo.png" alt="Logo der HTL Waidhofen">
+                <a href="/">
+                    <img src="/assets/imgs/HTL_Logo.png" alt="Logo der HTL Waidhofen">
                 </a>
                 <button id="burgermenu"><i class="fa-solid fa-bars"></i></button>    
             </div>
@@ -30,7 +30,7 @@
                 <div class="themeSwitcher">                
                     <i class="fa-solid fa-sun fa-xl"></i>
                     <label class="switch">
-                        <input type="checkbox" aria-label="Modus wechseln" onclick="switchTheme()"><!--???-->
+                        <input type="checkbox" aria-label="Modus wechseln"><!--???-->
                         <span class="toggle round"></span>  
                     </label>
                     <i class="fa-solid fa-moon fa-xl"></i>  
@@ -38,7 +38,7 @@
             </nav>
         </header>
 
-        <main id="home" style="display: none;">
+        <main id="home" style="display: block;">
             <div class="allwrapperCenter">
                 <div class="allwrapperWidth90">
                     <div class="allwrapperFullWidth">
@@ -268,7 +268,7 @@
             </div>
         </main>
 
-        <main id="impressum" style="display: none;">
+        <main id="legal" style="display: none;">
             <h3>Impressum & Datenschutz</h3>
 
             <p>
@@ -323,7 +323,7 @@
             </p>
         </main>
 
-        <main id="nutzungsbedingungen" style="display: none";>
+        <main id="termsofuse" style="display: none";>
             <h3>Nutzungsbedingungen für den KI-Tutor</h3>
 
             <p>
@@ -409,13 +409,14 @@
                 <div class="allwrapperWidth90">
                     <span class="line"></span>
                     <div id="footerwrapper">
-                        <a>Impressum & Datenschutz</a>
-                        <a>Nutzungsbedingungen</a>
+                        <a id="footerLegal">Impressum & Datenschutz</a>
+                        <a id="footerTermsOfUse">Nutzungsbedingungen</a>
                     </div>
                 </div>
             </div>
         </footer>
 
         <script type="text/javascript" src="./js/index.js"></script>
+        <script type="text/javascript" src="./js/api.js"></script>
     </body>
 </html>
