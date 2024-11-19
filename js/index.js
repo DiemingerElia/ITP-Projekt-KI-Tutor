@@ -48,12 +48,12 @@ footerLinks.forEach((element) => {
 
 burgerMenu.addEventListener('click', function(event){
     event.preventDefault();
-    if(document.querySelector('#header > nav').style.display == "block"){
+    if(document.querySelector('#header > nav').style.display == "flex"){
         document.querySelector('#header > nav').style.display = "none";
     }
     else{
-        document.querySelector('#header > nav').style.display = "block"
-    }
+        document.querySelector('#header > nav').style.display = "flex"
+    }u
 })
 
 themeSwitcher.addEventListener('change', function (event) {
