@@ -14,7 +14,7 @@
         <link rel="manifest" href="assets/icons/favicon/site.webmanifest">
     </head>
 
-    <body class="darkTheme">
+    <body class="lightTheme">
         <header id="header">
             <div id="headerflex">
                 <a href="/">
@@ -227,12 +227,33 @@
         <main id="tutor" style="display: none;">
             <aside id="ttutorselectwrapper">
                 <select name="tutors" id="ttutorselect">
-                    <option value="ProgrammierTutor">Programmier Tutor</option>
-                    <option value="MatheTutor">Mathematik Tutor</option>
+                    <option value="GENERALKNOWLEDGE_ROLE">Allgemeinwissen</option>
+                    <option value="MATH_ROLE">Mathematik</option>
+                    <option value="GERMAN_ROLE">Deutsch</option>
+                    <option value="ENGLISH_ROLE">Englisch</option>
+                    <option value="GEOGRAPHY_ROLE">Geografie</option>
+                    <option value="HISTORY_ROLE">Geschichte</option>
+                    <option value="PHYSICS_ROLE">Physik</option>
+                    <option value="CHEMISTRY_ROLE">Chemie</option>
+                    <option value="INFORMATICS_ROLE">Informatik</option>
+                    <option value="PROGRAMING_ROLE">Programmieren</option>
+                    <option value="NETWORKENGINEERING_ROLE">Netzwerktechnick</option>
+                    <option value="NETWORKENGINEERING_ADVANCED_ROLE">Fortgeschr. Netzwerktechnik</option>
+                    <option value="IT_SECURITY_ASSISTANT_ROLE">IT-Sicherheit</option>
+                    <option value="CLOUD_COMUPUTING_ROLE">Cloudcomputing</option>
+                    <option value="DATABASE_MANAGEMENT_ROLE">Datenbankmanagement</option>
+                    <option value="DEVOPS_ROLE">Dev-Ops</option>
+                    <option value="WEB_DEVELOPMENT_ROLE">Webentwicklung</option>
+                    <option value="IT_SUPPORT_ROLE">IT-Support</option>
+                    <option value="SOFTWARE_DEVELOPMENT_ROLE">Softwareentwicklung</option>
+                    <option value="ARTIFICIALI_NTELLIGENCE_AND_MACHINE_LEARNING_ROLE">KI und maschinelles Lernen</option>
+                    <option value="IT_PROJECT_MANAGEMENT_ROLE">IT-Projekt-Management</option>
                 </select>
             </aside>
             <!--doesn't start with t :(-->
-            <div id="messagecontainer"></div>
+            <div id="messagecontainer">
+                
+            </div>
             <div id="tinputareawrapper">
                 <input type="text" id="tinputarea" placeholder="Schreibe eine Nachricht..." onclick="scrollToBottom()"><!--this currently only scrolls to the input area when typing (mobile) except you are at the very bottom-->
                 <button id="tinputsend"><i class="fa-solid fa-paper-plane-top"></i></button>

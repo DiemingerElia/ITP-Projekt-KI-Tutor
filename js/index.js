@@ -18,7 +18,12 @@ navButtons.forEach((element) => {
     element.addEventListener("click", (event) => {
         let newPage = event.target.id.toString().toLocaleLowerCase().replace("nav", "");
 
-        if(currentPage == newPage) return;
+        if(currentPage == newPage){
+            document.querySelector('#header > nav').style.display = "none";
+            document.querySelector('#' + currentPage).style.display = "block";
+            document.querySelector('footer').style.display = "block";
+            return;
+        }
 
         document.querySelector("#" + newPage).style.display = "block";
         document.querySelector("#" + currentPage).style.display = "none";
@@ -50,10 +55,14 @@ burgerMenu.addEventListener('click', function(event){
     event.preventDefault();
     if(document.querySelector('#header > nav').style.display == "flex"){
         document.querySelector('#header > nav').style.display = "none";
+        document.querySelector('#' + currentPage).style.display = "block";
+        document.querySelector('footer').style.display = "block";
     }
     else{
-        document.querySelector('#header > nav').style.display = "flex"
-    }u
+        document.querySelector('#header > nav').style.display = "flex";
+        document.querySelector('#' + currentPage).style.display = "none";
+        document.querySelector('footer').style.display = "none";
+    }
 })
 
 themeSwitcher.addEventListener('change', function (event) {
