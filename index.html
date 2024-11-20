@@ -1,188 +1,265 @@
 <!DOCTYPE html>
-<html>
+<html lang="de-at">
     <head>
-        <Title>Landing Page</Title>
+        <Title>Startseite</Title>
         <meta charset="UTF-8">
-        <meta lang="de">
-
+        <meta lang="de-at">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" interactive-widget="resizes-content">
+        <link rel="stylesheet" href="./style.css">
         <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.6.0/css/all.css">
 
-        <link rel="apple-touch-icon" sizes="180x180" href="/img/favicon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-        <link rel="manifest" href="/img/favicon/site.webmanifest">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon/favicon-16x16.png">
+        <link rel="manifest" href="assets/icons/favicon/site.webmanifest    ">
     </head>
 
-    <body>
+    <body class="lightTheme">
         <header id="header">
+            <div id="headerflex">
+                <a href="/">
+                    <img src="/assets/imgs/HTL_Logo.png" alt="Logo der HTL Waidhofen">
+                </a>
+                <button id="burgermenu"><i class="fa-solid fa-bars"></i></button>    
+            </div>
             <nav>
-                <button id="navHome"><i class="fa-solid fa-house"></i>&ensp;Startseite</button>
-                <button id="navTutor"><i class="fa-solid fa-brain-circuit"></i>&ensp;KI-Tutor</button>      
-                <button id="navAbout"><i class="fa-solid fa-user"></i>&ensp;Über uns</button>
-                <button id="navContact"><i class="fa-solid fa-phone"></i>&ensp;Kontakt</button>
-                <button id="navTheme">Mode: </button>
+                <button id="navHome" title="Startseite"><i class="fa-solid fa-house"></i>&ensp;Startseite</button>
+                <button id="navTutor" title="KI-Tutor"><i class="fa-solid fa-brain-circuit"></i>&ensp;KI-Tutor</button>      
+                <button id="navAbout" title="Über uns"><i class="fa-solid fa-user"></i>&ensp;Über uns</button>
+                <button id="navContact" title="Kontakt"><i class="fa-solid fa-phone"></i>&ensp;Kontakt</button>
+                <div class="themeSwitcher">                
+                    <i class="fa-solid fa-sun fa-xl"></i>
+                    <label class="switch">
+                        <input type="checkbox" aria-label="Modus wechseln"><!--???-->
+                        <span class="toggle round"></span>  
+                    </label>
+                    <i class="fa-solid fa-moon fa-xl"></i>  
+                </div>
             </nav>
         </header>
 
-        <main id="home">
-            <h1>Home</h1>
-            
-            <div>
-                <h2>Was wir machen</h2>
-                <p>
-                    Lernen mit deinem persönlichen KI-Tutor<br><br>
+        <main id="home" style="display: block;">
+            <div class="allwrapperCenter">
+                <div class="allwrapperWidth90">
+                    <div class="allwrapperFullWidth">
+                        <span class="line"></span>
+                        <div class="allheadingwrapper">
+                            <div class="line"></div>
+                            <h1 class="allheading">Home</h1>
+                            <div class="line"></div>
+                        </div>
+                        <div class="allparagraphwrapper">
+                            <div class="allparagraph">
+                                <div>
+                                    <p>
+                                        <h3>Lernen mit deinem persönlichen KI-Tutor</h3><br><br>
 
-                    Entdecke eine neue Art des Lernens! Unser KI-Tutor bietet dir maßgeschneiderte Unterstützung in einer Vielzahl von 
-                    Fächern – wann und wo du willst. Ob Hausaufgabenhilfe, Prüfungsvorbereitung oder Vertiefung von Themen: Mit intelligenten, 
-                    auf dich abgestimmten Lernmethoden wirst du schneller und effizienter Fortschritte machen. Starte jetzt und erlebe, wie 
-                    einfach Lernen sein kann!<br><br>
-                    
-                    Dein Erfolg beginnt hier.
-                </p>
+                                        Entdecke eine neue Art des Lernens! Unser KI-Tutor bietet dir maßgeschneiderte Unterstützung in einer Vielzahl von 
+                                        Fächern – wann und wo du willst. Ob Hausaufgabenhilfe, Prüfungsvorbereitung oder Vertiefung von Themen: Mit intelligenten, 
+                                        auf dich abgestimmten Lernmethoden wirst du schneller und effizienter Fortschritte machen. Starte jetzt und erlebe, wie 
+                                        einfach Lernen sein kann!<br><br>
+                                        
+                                        Dein Erfolg beginnt hier.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3>Schnelle Antworten, wann immer du sie brauchst</h3>
+                                    <p>
+                                        Keine langen Wartezeiten mehr! Mit unserem KI-Tutor erhältst du sofort präzise Antworten auf deine Fragen. 
+                                        Egal, ob es um komplizierte Matheaufgaben oder schwierige Grammatikregeln geht – dein persönlicher Tutor liefert 
+                                        dir in Sekundenschnelle die richtige Lösung. Effizient, direkt und immer verfügbar.
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3>Lerne jederzeit – flexibel und auf Abruf</h3>
+                                    <p>
+                                        Mit unserem KI-Tutor bestimmst du, wann und wo du lernst. Ob früh am Morgen oder spät in der Nacht – du hast rund 
+                                        um die Uhr Zugang zu personalisierten Lerninhalten und Antworten. Perfekt für deinen Alltag, ganz ohne feste Zeiten oder Termine. 
+                                        Lerne flexibel, wann es dir passt!
+                                    </p>
+                                </div>
+
+                                <div>
+                                    <h3>Individuelle Unterstützung – genau auf dich abgestimmt</h3>
+                                    <p>
+                                        Jeder lernt anders, und unser KI-Tutor passt sich genau an deine Bedürfnisse an. Mit personalisierten Erklärungen, 
+                                        maßgeschneiderten Übungen und individuellen Lernplänen erhältst du die Unterstützung, die du brauchst, um effizient 
+                                        Fortschritte zu machen. Dein Lernweg – optimal auf dich abgestimmt!
+                                    </p>
+                                </div>
+
+                                <h3>
+                                    Starte jetzt und verbessere dein Lernen!
+                                    Melde dich noch heute an und erlebe, wie unser KI-Tutor dir hilft, schneller, einfacher und effizienter zu lernen. 
+                                    Hol dir die Unterstützung, die du verdienst – jederzeit, überall. Jetzt kostenlos testen!
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <h3>Schnelle Antworten, wann immer du sie brauchst</h3>
-                <p>
-                    Keine langen Wartezeiten mehr! Mit unserem KI-Tutor erhältst du sofort präzise Antworten auf deine Fragen. 
-                    Egal, ob es um komplizierte Matheaufgaben oder schwierige Grammatikregeln geht – dein persönlicher Tutor liefert 
-                    dir in Sekundenschnelle die richtige Lösung. Effizient, direkt und immer verfügbar.
-                </p>
-            </div>
-
-            <div>
-                <h3>Lerne jederzeit – flexibel und auf Abruf</h3>
-                <p>
-                    Mit unserem KI-Tutor bestimmst du, wann und wo du lernst. Ob früh am Morgen oder spät in der Nacht – du hast rund 
-                    um die Uhr Zugang zu personalisierten Lerninhalten und Antworten. Perfekt für deinen Alltag, ganz ohne feste Zeiten oder Termine. 
-                    Lerne flexibel, wann es dir passt!
-                </p>
-            </div>
-
-            <div>
-                <h3>Individuelle Unterstützung – genau auf dich abgestimmt</h3>
-                <p>
-                    Jeder lernt anders, und unser KI-Tutor passt sich genau an deine Bedürfnisse an. Mit personalisierten Erklärungen, 
-                    maßgeschneiderten Übungen und individuellen Lernplänen erhältst du die Unterstützung, die du brauchst, um effizient 
-                    Fortschritte zu machen. Dein Lernweg – optimal auf dich abgestimmt!
-                </p>
-            </div>
-
-            <h2>
-                Starte jetzt und verbessere dein Lernen!
-                Melde dich noch heute an und erlebe, wie unser KI-Tutor dir hilft, schneller, einfacher und effizienter zu lernen. 
-                Hol dir die Unterstützung, die du verdienst – jederzeit, überall. Jetzt kostenlos testen!
-            </h2>
         </main>
 
         <main id="about" style="display: none;">
-            <h1>Über uns</h1>
-            <div>
-                <p>Wir sind ein vier-köpfiges Team des 3. Jahrgangs der HTL Waidhofen in der Abteilung Informationstechnologie.</p>
-            </div>
-            <h2>Teammitglieder</h2>
-            <div>
-                <img src="img/eliaDieminger.jpg">
-                <h3>Elia Dieminger</h3>
-                <p></p>
-                <p>Aufgaben: Dokumentation & Organisation des Projektes, HTML-Struktur der "Kontakt"- & "Über uns" Seite sowie Unterstützung bei den anderen Aufgaben.</p>
-                <a href="https://github.com/DiemingerElia">Elia's GitHub</a>
-            </div>
-            <div>
-                <img src="img/tobiasRiener.jpg">
-                <h3>Tobias Riener</h3>
-                <p>Jongliert meist bis spät in die Nacht mit Big Bugs und Big Macs.</p>
-                <p>Aufgaben: Node.js & OpenAI-API-Integration also das komplette Backend.</p>
-                <a href="https://github.com/RienerTobias">Tobias' GitHub</a>
-            </div>
-            <div>
-                <img src="img/tobiasSchippany.jpg">
-                <h3>Tobias Schippany</h3>
-                <p>Neben der IT Interesse sucht er meist nach neuen Traktoren, Unifi Produkten oder 3D Druck Tutorials.</p>
-                <p>Aufgabe: Erstellung der HTML-Struktur.</p>
-                <a href="https://github.com/SchippanyTobias">Tobias' GitHub</a>
-            </div>
-            <div>
-                <img src="img/florianNestelberger.jpg">
-                <h3>Florian Nestelberger</h3>
-                <p>Probiert oft Stundenlang die besten Möglichkeiten für die CSS Datei.</p>
-                <p>Aufgabe: Das Komplette Design mittels CSS erstellen.</p>
-                <a href="https://github.com/spectatorflo">Florian's GitHub</a>
-            </div>
-            <h2>Projekt: </h2>
-            <div>
-                <p>
-                    Lernen mit deinem persönlichen KI-Tutor<br><br>
+            <div class="allwrapperCenter">
+                <div class="allwrapperWidth90">
+                    <div class="allwrapperFullWidth">
+                        <span class="line"></span>
+                        <div class="allheadingwrapper">
+                            <div class="line"></div>
+                            <h1 class="allheading">Über uns</h1>
+                            <div class="line"></div>
+                        </div>
+                        <div>
+                            <p>Wir sind ein vier-köpfiges Team des 3. Jahrgangs der HTL Waidhofen in der Abteilung Informationstechnologie.</p>
+                        </div>
+                        <div class="allheadingwrapper">
+                            <h3>Teammitglieder</h3>
+                        </div>
+                        <div class="apersoncontainer">
+                            <img src="assets/imgs/eliaDieminger.jpg">
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Elia Dieminger</h3>
+                                    <p></p>
+                                    <p>Aufgaben: Dokumentation & Organisation des Projektes, HTML-Struktur der "Kontakt"- & "Über uns" Seite sowie Unterstützung bei den anderen Aufgaben.</p>
+                                    <a href="https://github.com/DiemingerElia" class="apersonlink" target="_blank">Elia's GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apersoncontainer">
+                            <img src="assets/imgs/tobiasRiener.jpg">
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Tobias Riener</h3>
+                                    <p>Jongliert meist bis spät in die Nacht mit Big Bugs und Big Macs.</p>
+                                    <p>Aufgaben: Node.js & OpenAI-API-Integration also das komplette Backend.</p>
+                                    <a href="https://github.com/RienerTobias" class="apersonlink" target="_blank">Tobias' GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apersoncontainer">
+                            <img src="assets/imgs/tobiasSchippany.jpg">
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Tobias Schippany</h3>
+                                    <p>Neben der IT Interesse sucht er meist nach neuen Traktoren, Unifi Produkten oder 3D Druck Tutorials.</p>
+                                    <p>Aufgabe: Erstellung der HTML-Struktur.</p>
+                                    <a href="https://github.com/SchippanyTobias" class="apersonlink" target="_blank">Tobias' GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="apersoncontainer">
+                            <img src="assets/imgs/florianNestelberger.jpg">
+                            <div class="apersondescwrapper">
+                                <div class="apersondesc">
+                                    <h3>Florian Nestelberger</h3>
+                                    <p>Probiert oft Stundenlang die besten Möglichkeiten für die CSS Datei.</p>
+                                    <p>Aufgabe: Das Komplette Design mittels CSS erstellen.</p>
+                                    <a href="https://github.com/NestelbergerFlorian" class="apersonlink" target="_blank">Florian's GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <h2>Projekt: </h2>
+                        <div>
+                            <p>
+                                Lernen mit deinem persönlichen KI-Tutor<br><br>
 
-                    Entdecke eine neue Art des Lernens! Unser KI-Tutor bietet dir maßgeschneiderte Unterstützung in einer Vielzahl von 
-                    Fächern – wann und wo du willst. Ob Hausaufgabenhilfe, Prüfungsvorbereitung oder Vertiefung von Themen: Mit intelligenten, 
-                    auf dich abgestimmten Lernmethoden wirst du schneller und effizienter Fortschritte machen. Starte jetzt und erlebe, wie 
-                    einfach Lernen sein kann!<br><br>
-                    
-                    Dein Erfolg beginnt hier.
-                </p>
+                                Entdecke eine neue Art des Lernens! Unser KI-Tutor bietet dir maßgeschneiderte Unterstützung in einer Vielzahl von 
+                                Fächern – wann und wo du willst. Ob Hausaufgabenhilfe, Prüfungsvorbereitung oder Vertiefung von Themen: Mit intelligenten, 
+                                auf dich abgestimmten Lernmethoden wirst du schneller und effizienter Fortschritte machen. Starte jetzt und erlebe, wie 
+                                einfach Lernen sein kann!<br><br>
+                                
+                                Dein Erfolg beginnt hier.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
+
         <main id="contact" style="display: none;">
-            <h1>Kontakt</h1>
-            <div>
-                <label><i class="fa-solid fa-person"></i>&emsp;Name: </label><input type="text" name="contactName">
-                <br>
-                <label><i class="fa-solid fa-envelope"></i>&emsp;E-Mail: </label><input type="text" name="contactEmail">
-                <br>
-                <label><i class="fa-solid fa-pen"></i>&emsp;Betreff: </label><input type="text" name="contactBetreff">
-                <br>
-                <label><i class="fa-solid fa-pen"></i>&emsp;Nachricht: </label><input type="text" name="contactNachricht">
-                <br>
-                <button name="contactSenden"><i class="fa-solid fa-upload"></i>&emsp;Senden</button>
-            </div>
-            <div>
-                <h3>Alternative Kontaktinformation: </h3>
-                <p><i class="fa-solid fa-envelope"></i>&emsp;E-Mail: ki.tutor@htlwy.at</p>
-                <p>
-                    <i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/"></i>Instagram</a>
-                    <br>
-                    <i class="fa-brands fa-facebook"></i> <a href="https://www.facebook.com/">Facebook</a>
-                    <br>
-                    <i class="fa-solid fa-school"></i> <a href="https://www.htlwy.at/">HTL Waidhofen/Ybbs</a>
-                </p>
-                <p>
-                    <h3>Unser Standort:</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2103.597159654484!2d14.786764035719289!3d47.951413919710774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477230431d85d13b%3A0xbbc0eaf3043592e7!2sHTL%20Waidhofen!5e1!3m2!1sde!2sat!4v1729664498966!5m2!1sde!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                
-                    <br>
-                    <i class="fa-solid fa-map"></i> <a href="https://www.google.at/maps/place/HTL+Waidhofen/@47.9519982,14.7868475,483m/data=!3m1!1e3!4m6!3m5!1s0x477230431d85d13b:0xbbc0eaf3043592e7!8m2!3d47.9505574!4d14.7867847!16s%2Fg%2F1tfb5c_m?entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D"> Google Maps</a>
-                </p>
+            <div class="allwrapperCenter">
+                <div class="allwrapperWidth90">
+                    <div class="allwrapperFullWidth">
+                        <span class="line"></span>
+                        <div class="allheadingwrapper">
+                            <div class="line"></div>
+                            <h1 class="allheading">Kontakt</h1>
+                            <div class="line"></div>
+                        </div>
+                        <div class="cinputwrapper">
+                            <input type="text" name="contactName" placeholder="Name">
+                            <input type="text" name="contactEmail" placeholder="E-Mail">
+                            <input type="text" name="contactBetreff" placeholder="Betreff">
+                            <textarea name="contactNachricht" placeholder="Nachricht"></textarea>
+                            <br>
+                            <div id="ccentersend"><button name="contactSenden" id="csend"><i class="fa-solid fa-upload"></i>&emsp;Senden</button></div>
+                        </div>
+                        <div>
+                            <h3>Alternative Kontaktinformation: </h3>
+                            <div id="ccenterclinkwrapper">
+                                <p id="clinkwrapper">
+                                    <a href="mailto:ki.tutor@htlwy.at" id="cmail"><i class="fa-solid fa-envelope"></i><span>&emsp;ki.tutor@htlwy.at</span></a>
+                                    <br>
+                                    <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i><span>&emsp;Instagram</span></a>
+                                    <br>
+                                    <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i><span>&emsp;Facebook</span></a>
+                                    <br>
+                                    <a href="https://www.htlwy.at/"><i class="fa-solid fa-school"></i><span>&emsp;HTL Waidhofen/Ybbs</span></a>
+                                </p>
+                            </div>
+                            <p>
+                                <h3>Unser Standort:</h3>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2103.597159654484!2d14.786764035719289!3d47.951413919710774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x477230431d85d13b%3A0xbbc0eaf3043592e7!2sHTL%20Waidhofen!5e1!3m2!1sde!2sat!4v1729664498966!5m2!1sde!2sat" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" id="cgooglemaps"></iframe>                
+                                <br>
+                                <div id="ccenteropeninapp"><a href="https://www.google.at/maps/place/HTL+Waidhofen/@47.9519982,14.7868475,483m/data=!3m1!1e3!4m6!3m5!1s0x477230431d85d13b:0xbbc0eaf3043592e7!8m2!3d47.9505574!4d14.7867847!16s%2Fg%2F1tfb5c_m?entry=ttu&g_ep=EgoyMDI0MTAyMC4xIKXMDSoASAFQAw%3D%3D" id="copeninapp"><i class="fa-solid fa-map"></i>&emsp;Google Maps</a></div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
         <main id="tutor" style="display: none;">
-            <aside>
-                <label for="tutors">Tutor auswählen</label>
-                <select name="tutors">
-                    <option value="ProgrammierTutor">Programmier Tutor</option>
-                    <option value="MatheTutor">Mathematik Tutor</option>
+            <aside id="ttutorselectwrapper">
+                <select name="tutors" id="ttutorselect">
+                    <option value="GENERALKNOWLEDGE_ROLE">Allgemeinwissen</option>
+                    <option value="MATH_ROLE">Mathematik</option>
+                    <option value="GERMAN_ROLE">Deutsch</option>
+                    <option value="ENGLISH_ROLE">Englisch</option>
+                    <option value="GEOGRAPHY_ROLE">Geografie</option>
+                    <option value="HISTORY_ROLE">Geschichte</option>
+                    <option value="PHYSICS_ROLE">Physik</option>
+                    <option value="CHEMISTRY_ROLE">Chemie</option>
+                    <option value="INFORMATICS_ROLE">Informatik</option>
+                    <option value="PROGRAMING_ROLE">Programmieren</option>
+                    <option value="NETWORKENGINEERING_ROLE">Netzwerktechnick</option>
+                    <option value="NETWORKENGINEERING_ADVANCED_ROLE">Fortgeschr. Netzwerktechnik</option>
+                    <option value="IT_SECURITY_ASSISTANT_ROLE">IT-Sicherheit</option>
+                    <option value="CLOUD_COMUPUTING_ROLE">Cloudcomputing</option>
+                    <option value="DATABASE_MANAGEMENT_ROLE">Datenbankmanagement</option>
+                    <option value="DEVOPS_ROLE">Dev-Ops</option>
+                    <option value="WEB_DEVELOPMENT_ROLE">Webentwicklung</option>
+                    <option value="IT_SUPPORT_ROLE">IT-Support</option>
+                    <option value="SOFTWARE_DEVELOPMENT_ROLE">Softwareentwicklung</option>
+                    <option value="ARTIFICIALI_NTELLIGENCE_AND_MACHINE_LEARNING_ROLE">KI und maschinelles Lernen</option>
+                    <option value="IT_PROJECT_MANAGEMENT_ROLE">IT-Projekt-Management</option>
                 </select>
-                
-
             </aside>
-
-            <br>
-
-            <div>
-                <label>Fragen Sie mich etwas:</label>
-                <input type="text">
-
-                <button>Absenden</button>
+            <!--doesn't start with t :(-->
+            <div id="messagecontainer">
+                
             </div>
-
-            <div>
-                <p>Lorem Ipsum dolor sit ahmet</p>
-                <p>Lorem Ipsum dolor sit ahmet</p>
-                <p>Lorem Ipsum dolor sit ahmet</p>
+            <div id="tinputareawrapper">
+                <input type="text" id="tinputarea" placeholder="Schreibe eine Nachricht..." onclick="scrollToBottom()"><!--this currently only scrolls to the input area when typing (mobile) except you are at the very bottom-->
+                <button id="tinputsend"><i class="fa-solid fa-paper-plane-top"></i></button>
             </div>
         </main>
 
-        <main id="impressum" style="display: none";>
+        <main id="legal" style="display: none;">
             <h3>Impressum & Datenschutz</h3>
 
             <p>
@@ -237,7 +314,7 @@
             </p>
         </main>
 
-        <main id="nutzungsbedingungen" style="display: none";>
+        <main id="termsofuse" style="display: none";>
             <h3>Nutzungsbedingungen für den KI-Tutor</h3>
 
             <p>
@@ -319,10 +396,18 @@
         </main>
 
         <footer id="footer">
-            <a>Impressum & Datenschutz</a>
-            <a>Nutzungsbedingungen</a>
+            <div class="allwrapperCenter">
+                <div class="allwrapperWidth90">
+                    <span class="line"></span>
+                    <div id="footerwrapper">
+                        <a id="footerLegal">Impressum & Datenschutz</a>
+                        <a id="footerTermsOfUse">Nutzungsbedingungen</a>
+                    </div>
+                </div>
+            </div>
         </footer>
 
         <script type="text/javascript" src="./js/index.js"></script>
+        <script type="text/javascript" src="./js/api.js"></script>
     </body>
 </html>
