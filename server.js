@@ -85,14 +85,17 @@ async function HandleRequest(req, res){
         }
     }
     else{
-        res.writeHead(404, {'Content-Type': 'plain/text'});
-        res.end('404 Not Found!');
+        HandleError("Not Found!", 404, res);
     }
 }
 
 function HandleError(displayedText, errCode, res){
-    res.writeHead(errCode, {'Content-Type': 'text/plain'});
-    res.end(errCode + " " + displayedText);
+    httpResponse = FILE_SYSTEM.readFileSync("./error.html", "utf-8");
+    httpResponse = httpResponse.replace("!!!errorOutput!!!", "Error " + errCode + " - " + displayedText);
+
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.write(httpResponse);
+    res.end();
 }
 
 let server = HTTP.createServer(HandleRequest);
