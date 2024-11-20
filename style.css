@@ -46,9 +46,6 @@ main{
 @media all and (min-width: 340px) {
     
     /* header start */
-    #header nav{
-        display: none;
-    }
     
     #header{
         height: 10vh;
@@ -57,6 +54,31 @@ main{
 
     #header button{
         cursor: pointer;
+    }
+
+    #header .themeSwitcher{
+        align-self: center;
+    }
+
+    #header nav{
+        left: 0;
+        display: none;
+        width: 100%;
+        height: calc(90vh - 20px);
+        position: absolute;
+        flex-direction: column;
+    }
+
+    #header nav button{
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        border: 0;
+        height: min-content;
+        padding: 20px;
+        font-size: 1rem;
+        margin: 20px;
+        width: 75%;
+        align-self: center;
     }
 
     #headerflex{
@@ -68,7 +90,7 @@ main{
 
     #burgermenu{
         width: auto;
-        height: 100%;
+        height: 100vh;
         max-height: 100%;
         aspect-ratio: 1/1;
         display: flex;
@@ -100,6 +122,14 @@ main{
         margin-top: inherit; 
         align-self: center;   
     }
+
+    .themeSwitcher{
+        display: flex;
+    }
+
+    .themeSwitcher i{
+        align-self: center;
+    }
     /* header end */
 
     /* footer start */
@@ -120,6 +150,10 @@ main{
         text-decoration: none;
         color: var(--accentColor1);
         font-size: 1.3rem;
+    }
+
+    #footerwrapper{
+        cursor: pointer;
     }
 
     /* footer end */
@@ -303,6 +337,7 @@ main{
         overflow-y: scroll;
         scroll-behavior: smooth;
         scrollbar-width: none;
+        height: calc(90vh - 20px);
         margin-bottom: 2rem;
     }
 
@@ -327,9 +362,11 @@ main{
         width: 90%;
         border-radius: 99px;
         padding: 0 10px;
+        border: none;
         border: 2px solid var(--accentColor1);
         background-color: var(--backgroundColor);
         color: var(--textColor);
+        outline: none;
     }
 
 
@@ -355,14 +392,17 @@ main{
     }
 
     .ki-message::before{
-        content: "KI:";
+        content: "\f544";
         font-weight: bold;
+        font-family: "FontAwesome";
     }
 
     .user-message::before{
-        content: "Du:";
+        content: "\f007";
         font-weight: bold;
+        font-family: "FontAwesome";
     }
+
     /* tutor end */
 
     
@@ -481,6 +521,43 @@ main{
         color: var(--textColor);
     }
     /* contact end */
+
+    /* all error classes start with e */
+    /* error start */
+        #errormain{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #errormain div{
+            font-size: 4rem;
+            color: var(--textColor);
+        }
+
+        #errormain a{
+            display: flex;
+            justify-self: center;
+            font-family: "Roboto Bold";
+            height: min-content;
+            border-radius: 5rem;
+            border: 0;
+            box-shadow: var(--boxShadowColor) 0 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0.5rem 1rem;
+            user-select: none;
+            -webkit-user-select: none;
+            font-size: 2rem;
+            align-self: center;
+            text-decoration: none;
+            background-color: var(--accentColor1);
+            color: var(--textColor);
+        }
+    /* error end */
 }
 
 @media all and (min-width: 482px){
@@ -556,19 +633,27 @@ main{
 
 @media all and (min-width: 771px){
 
-    #header nav button{
-        color: var(--textColor);
-        background-color: var(--backgroundColor);
-        border: 0;
-        height: min-content;
-        padding: 20px;
-        font-size: 1rem;
+    #header nav{
+        display: flex;
+        justify-content: end;
     }
 
     #header nav{
-        display: flex;
-        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        position: unset;
+        flex-direction: unset;
     }
+
+    #header nav button{
+        padding: 0;
+        margin: 20px;
+        width: unset;
+    }
+
+    /* #header nav#navTutor:{
+
+    } */
 
     
     #headerflex{
@@ -579,13 +664,6 @@ main{
         display: none;
     }
 
-    .themeSwitcher{
-        display: flex;
-    }
-
-    .themeSwitcher i{
-        align-self: center;
-    }
 }
 
 @media all and (min-width: 801px){
@@ -630,4 +708,33 @@ main{
 
 
     /* contact end */
+
+    /* tutor start */
+    #tinputareawrapper{
+        width: 50%;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+    }
+
+    #tinputarea{
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    #tinputarea:focus{
+        padding: 0 20px;
+    }
+
+    #tinputsend{
+        width: auto;
+        padding: 20px;
+    }
+    /* tutor end */
+
+    /* error start */
+    #errormain a{
+        font-size: 1.5rem;
+    }
+    /* error end */
 }
