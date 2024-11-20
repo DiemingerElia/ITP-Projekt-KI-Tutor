@@ -32,7 +32,7 @@ navButtons.forEach((element) => {
     
         currentPage = newPage;
         document.title = document.querySelector('#nav' + newPage.charAt(0).toUpperCase() + newPage.slice(1)).innerHTML.split('</i>').pop().trim();
-
+        document.querySelector('#footer').style.display = "block";
         if(window.innerWidth <= 768){
             document.querySelector('#header > nav').style.display = "none";
         }
