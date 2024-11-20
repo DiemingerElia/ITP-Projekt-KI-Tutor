@@ -250,6 +250,10 @@ main{
     .allwrapperWidth90{
         width: 90%;
     }
+
+    .allwrapperWidth80{
+        width: 80%;
+    }
     
     .allparagraphwrapper{
         width: 100%;
@@ -392,12 +396,14 @@ main{
     }
 
     .ki-message::before{
+        display: block;
         content: "\f544";
         font-weight: bold;
         font-family: "FontAwesome";
     }
 
     .user-message::before{
+        display: block;
         content: "\f007";
         font-weight: bold;
         font-family: "FontAwesome";
