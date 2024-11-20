@@ -19,7 +19,9 @@ navButtons.forEach((element) => {
         let newPage = event.target.id.toString().toLocaleLowerCase().replace("nav", "");
 
         if(currentPage == newPage){
-            document.querySelector('#header > nav').style.display = "none";
+            if(window.innerWidth <= 768) {
+                document.querySelector('#header > nav').style.display = "none";
+            }
             document.querySelector('#' + currentPage).style.display = "block";
             document.querySelector('footer').style.display = "block";
             return;
