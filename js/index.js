@@ -10,6 +10,8 @@ const footerLegal = document.querySelector('#footerLegal');
 
 const themeSwitcher = document.querySelector('.themeSwitcher input');
 
+const tryTutorButton = document.querySelector('#ctaTutor');
+
 const navButtons = [navHomeButton, navAboutButton, navContactButton, navTutorButton];
 const footerLinks = [footerTermsOfUse, footerLegal];
 let currentPage = "home";
@@ -76,6 +78,10 @@ themeSwitcher.addEventListener('change', function (event) {
         document.body.classList.remove('darkTheme');
         document.body.classList.add('lightTheme');
     }
+});
+
+tryTutorButton.addEventListener('click', function(event){
+    navTutorButton.click();
 });
 
 document.body.onload = function(){
