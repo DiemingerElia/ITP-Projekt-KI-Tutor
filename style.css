@@ -64,12 +64,15 @@ main{
         left: 0;
         display: none;
         width: 100%;
+        max-width: 100vw;
         height: calc(90vh - 20px);
         position: absolute;
         flex-direction: column;
     }
 
     #header nav button{
+        word-wrap: none;
+        white-space: none;
         color: var(--textColor);
         background-color: var(--backgroundColor);
         border: 0;
@@ -279,6 +282,53 @@ main{
         background-color: none;
         text-decoration: none;
     }
+
+    /* all home classes start with h */
+    /* home start */
+    #hvideo{
+        max-width: 100%;
+        margin-bottom: 50px;
+        outline: none;
+        border: none;
+        border: 3px solid var(--accentColor1)
+    }   
+
+    #hvideo{
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        user-select: none;
+        -webkit-user-select: none;
+        text-decoration: none;
+    }
+    
+    #hvideowrapper{
+        width: fit-content;
+    }
+
+    #hcentervideo{
+        display: flex;
+        justify-content: center;
+    }
+
+    #hcentervideo button{
+        display: flex;
+        justify-self: center;
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        font-size: 1.5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+    /* home end */
 
     /* all about classes start with a */
     /* about start */
