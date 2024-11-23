@@ -1,0 +1,796 @@
+@font-face { 
+    font-family: "Roboto Regular";
+    src: url("./assets/fonts/Roboto-Regular.ttf");
+}
+
+
+@font-face {
+    font-family: "Roboto Medium";
+    src: url("./assets/fonts/Roboto-Medium.ttf");
+}
+
+@font-face { /*for buttons*/
+    font-family: "Roboto Bold";
+    src: url("./assets/fonts/Roboto-Bold.ttf");
+}
+
+html, body{    
+    padding: 0;
+    margin: 0;
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    font-family: "Roboto Medium";
+}
+
+main{
+    height: auto;
+}
+
+.darkTheme{
+    --backgroundColor: #262626;
+    --textColor: #FAFAFA;
+    --accentColor1: #4BA3FB;
+    /* --accentColor2: #979DAC; */
+    --boxShadowColor: #5555e8;
+}
+
+
+.lightTheme{
+    --backgroundColor: #fafafa; 
+    --textColor: #262626;
+    --accentColor1: #6DB6FF;
+    /* --accentColor2: #023E7D; */
+    --boxShadowColor: #FFFFFF;
+}
+
+@media all and (min-width: 340px) {
+    
+    /* header start */
+    
+    #header{
+        height: 10vh;
+        margin: 20px;
+    }
+
+    #header button{
+        cursor: pointer;
+    }
+
+    #header .themeSwitcher{
+        align-self: center;
+    }
+
+    #header nav{
+        left: 0;
+        display: none;
+        width: 100%;
+        max-width: 100vw;
+        height: calc(90vh - 20px);
+        position: absolute;
+        flex-direction: column;
+    }
+
+    #header nav button{
+        word-wrap: none;
+        white-space: none;
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        border: 0;
+        height: min-content;
+        padding: 20px;
+        font-size: 1rem;
+        margin: 20px;
+        width: 75%;
+        align-self: center;
+    }
+
+    #headerflex{
+        height: 90%;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #burgermenu{
+        width: auto;
+        height: 100vh;
+        max-height: 100%;
+        aspect-ratio: 1/1;
+        display: flex;
+        justify-content: center;
+        border: 0;
+        background-color: var(--backgroundColor);
+        color: var(--textColor);
+        /* maybe use unicode icon???? */
+    }
+
+    #burgermenu i{
+        width: 100%;
+        height: 100%;    
+        max-width: inherit;
+        max-height: inherit;
+        font-size: 8vh;
+        aspect-ratio: 1/1;
+    }
+
+    #header a img{
+        max-height: 100%;
+    }
+
+    .line{
+        display: none;
+        height: 4px;
+        width: 100%;
+        background-color: var(--textColor);
+        margin-top: inherit; 
+        align-self: center;   
+    }
+
+    .themeSwitcher{
+        display: flex;
+    }
+
+    .themeSwitcher i{
+        align-self: center;
+    }
+    /* header end */
+
+    /* footer start */
+
+    #footer{
+        margin-top: 100px;
+    }
+
+    #footerwrapper{
+        display: grid;
+        grid-auto-columns: auto;
+        grid-auto-rows: auto;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #footer a{
+        text-decoration: none;
+        color: var(--accentColor1);
+        font-size: 1.3rem;
+    }
+
+    #footerwrapper{
+        cursor: pointer;
+    }
+
+    /* footer end */
+
+    /* themeToggle start */
+    .toggle {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+        /* height: 2rem; */
+        border-radius: 3rem;
+    }
+
+    .toggle:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked + .toggle {
+        background-color: var(--accentColor1);
+    }
+
+    /* input:not(:checked) + .toggle {
+        background-color: yellow;
+    } */
+
+    #dark input:checked + .toggle {
+        background-color: var(--accentColor1);
+    }
+
+    input:checked + .toggle:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+        align-self: center;
+        margin: 0 0.5rem;
+    }
+
+    .switch input { 
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .toggle.round {
+        border-radius: 34px;
+    }
+
+    .toggle.round:before {
+        border-radius: 50%;
+    }
+    /* themeToggle end */
+
+
+    /* all general classes start with all */
+
+    .allheadingwrapper{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .allheading{
+        font-family: "Roboto Bold";
+        font-size: 5rem;
+        padding: 0 0;
+        white-space: nowrap;
+    }
+
+    .allwrapperCenter{
+        display: flex;
+        justify-content: center;
+    }
+    
+    .allwrapperWidth90{
+        width: 90%;
+    }
+
+    .allwrapperWidth80{
+        width: 80%;
+    }
+    
+    .allparagraphwrapper{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .allparagraph{
+        font-family: "Roboto Regular";
+        font-size: 1.5rem;
+        box-sizing: border-box;
+        width: 95%;
+        border: 4px solid var(--textColor);
+        padding: 3rem;
+    }
+
+    h3{
+        font-family: "Roboto Medium";
+        font-size: 2rem;
+    }
+
+    a:hover, a:focus, a:active{/* tf??? remove blue background when clicking on links on mobile */
+        background-color: none;
+        text-decoration: none;
+    }
+
+    /* all home classes start with h */
+    /* home start */
+    #hvideo{
+        max-width: 100%;
+        margin-bottom: 50px;
+        outline: none;
+        border: none;
+        border: 3px solid var(--accentColor1)
+    }   
+
+    #hvideo{
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        user-select: none;
+        -webkit-user-select: none;
+        text-decoration: none;
+    }
+    
+    #hvideowrapper{
+        width: fit-content;
+    }
+
+    #hcentervideo{
+        display: flex;
+        justify-content: center;
+    }
+
+    #hcentervideo button{
+        display: flex;
+        justify-self: center;
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        font-size: 1.5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+    /* home end */
+
+    /* all about classes start with a */
+    /* about start */
+
+    .apersoncontainer{
+        max-width: 100%;
+        margin: 70px 0;
+    }
+
+    .apersoncontainer img{
+        max-width: 100%;
+    }
+
+    .apersonlink{
+        display: flex;
+        justify-self: center;
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+
+
+    /* about end */
+
+
+    /* all tutor start with t */
+    /* tutor start */
+
+    #ttutorselectwrapper {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    #ttutorselect{
+        text-align: center;
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        border: none;
+        font-size: 1.3rem;
+    }
+
+    select::before{
+        content: '\f0d7';
+    }
+
+    #messagecontainer{
+        width: 100%;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        scrollbar-width: none;
+        height: calc(90vh - 20px);
+        margin-bottom: 2rem;
+    }
+
+    #tinputareawrapper{
+        position: sticky;
+        bottom: 0vh;
+        left: 0vw;
+        width: 100%;
+        display: flex;
+    }
+
+    #tinputarea{
+        width: 90%;
+        border-radius: 99px;
+        padding: 0 10px;
+        border: 2px solid var(--accentColor1);
+        background-color: var(--backgroundColor);
+        color: var(--textColor);
+    }
+
+    #tinputarea:focus{
+        width: 90%;
+        border-radius: 99px;
+        padding: 0 10px;
+        border: none;
+        border: 2px solid var(--accentColor1);
+        background-color: var(--backgroundColor);
+        color: var(--textColor);
+        outline: none;
+    }
+
+
+    #tinputsend{
+        width: 10%;
+        border-radius: 99px;
+        aspect-ratio: 1/1;
+        background-color: var(--accentColor1);
+        border: none;
+    }
+
+    #tinputsend i{
+        min-width: 100%;
+    }
+
+    /* except this ones lol */
+    .ki-message{
+        text-align: left;
+    }
+
+    .user-message{
+        text-align: right;
+    }
+
+    .ki-message::before{
+        display: block;
+        content: "\f544";
+        font-weight: bold;
+        font-family: "FontAwesome";
+    }
+
+    .user-message::before{
+        display: block;
+        content: "\f007";
+        font-weight: bold;
+        font-family: "FontAwesome";
+    }
+
+    /* tutor end */
+
+    
+    /* all contact classes start with c */
+    /* contact start */
+    .cinputwrapper input, .cinputwrapper textarea{
+        outline: none;
+        border: none;
+        border-bottom: 2px solid var(--textColor);
+        opacity: 0.5;
+        color: var(--textColor);
+        background-color: var(--backgroundColor);
+        margin: 15px 0;
+        font-size: 1.2rem;
+        width: 100%;
+        font-family: "Roboto Regular";
+        resize: vertical;
+    }
+
+    .cinputwrapper input:focus, .cinputwrapper textarea:focus{
+        opacity: 1;
+        border-bottom: 2px solid var(--accentColor1);
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+    }
+
+    .cinputwrapper textarea{
+        height: 150px;
+    }
+
+    #ccentersend{
+        display: flex;
+        width: 100%;
+        justify-content: right;
+    }
+
+    #csend{
+        display: flex;
+        justify-self: center;
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+
+    #cmail{
+        color: var(--textColor);
+        text-decoration: none;
+    }
+
+    #ccenterclinkwrapper{
+        display: flex;
+        justify-content: center;
+    }
+
+    #clinkwrapper{
+        width: fit-content;
+        display: block;
+    }
+
+    #clinkwrapper a{
+        display: block;/*has to be display: block or margin won't work*/
+        text-decoration: none;
+        border-bottom: 2px solid #ffffff00;
+        color: var(--textColor);
+        font-size: 1.2rem;
+        margin: 5px 0;
+        padding-bottom: 2px;
+    }
+
+    #clinkwrapper a:hover{
+        border-bottom: 2px solid var(--accentColor1);
+        transition-duration: 0.5s;
+    }
+
+    #clinkwrapper a i{
+        width: 16px;
+    }
+
+    #cgooglemaps{
+        width: 100%
+    }
+
+    #ccenteropeninapp{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    #copeninapp{
+        display: flex;
+        justify-self: center;
+        font-family: "Roboto Bold";
+        height: min-content;
+        border-radius: 5rem;
+        border: 0;
+        box-shadow: var(--boxShadowColor) 0 10px 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        padding: 0.5rem 1rem;
+        user-select: none;
+        -webkit-user-select: none;
+        width: fit-content;
+        align-self: center;
+        text-decoration: none;
+        background-color: var(--accentColor1);
+        color: var(--textColor);
+    }
+    /* contact end */
+
+    /* all error classes start with e */
+    /* error start */
+        #errormain{
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #errormain div{
+            font-size: 4rem;
+            color: var(--textColor);
+        }
+
+        #errormain a{
+            display: flex;
+            justify-self: center;
+            font-family: "Roboto Bold";
+            height: min-content;
+            border-radius: 5rem;
+            border: 0;
+            box-shadow: var(--boxShadowColor) 0 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            padding: 0.5rem 1rem;
+            user-select: none;
+            -webkit-user-select: none;
+            font-size: 2rem;
+            align-self: center;
+            text-decoration: none;
+            background-color: var(--accentColor1);
+            color: var(--textColor);
+        }
+    /* error end */
+}
+
+@media all and (min-width: 482px){
+    
+    .line{
+        display: block;
+    }
+
+    .allheading{
+        padding: 0 32px;
+    }
+
+    /* #footerwrapper{
+        display: flex;
+        justify-content: space-between;
+    } */
+
+    #footer a{
+        font-size: 2rem;
+    }
+    
+    /* about start */
+    .apersoncontainer img{
+        max-width: 75%;
+        display: flex;
+        justify-self: center;
+    }
+
+    .apersondescwrapper{
+        width: 45%;
+    }
+    /* about end */
+}
+
+/* 
+@media all and (min-width: ) {
+    
+} */
+
+@media all and (min-width: 768px){
+    
+    #header{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #header nav button{
+        align-self: center;
+    }
+
+    /* about start */
+    .apersoncontainer{
+        display: flex;
+        justify-content: center;
+        margin: 50px 0;
+    }
+
+    .apersoncontainer img{
+        max-width: 35%;
+    }
+
+    .apersondesc{
+        padding: 30px;
+    }
+
+    .apersondesc h3{
+        text-align: center;
+    }
+
+    /* about end */
+
+}  
+
+@media all and (min-width: 771px){
+
+    #header nav{
+        display: flex;
+        justify-content: end;
+    }
+
+    #header nav{
+        width: 100%;
+        height: 100%;
+        position: unset;
+        flex-direction: unset;
+    }
+
+    #header nav button{
+        padding: 0;
+        margin: 20px;
+        width: unset;
+    }
+
+    /* #header nav#navTutor:{
+
+    } */
+
+    
+    #headerflex{
+        width: unset;
+    }
+
+    #burgermenu{
+        display: none;
+    }
+
+}
+
+@media all and (min-width: 801px){
+
+    #clinkwrapper{
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #clinkwrapper a{
+        margin: 0 10px;
+    }
+}
+
+@media all and (min-width: 1024px) {
+    
+    #header{
+        justify-content: space-between;
+    }
+
+    #header button{
+        font-size: 1.5rem;
+    }
+
+    .allheading{
+        padding: 0 32px;
+    }
+
+    #footerwrapper{
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    /* about start */
+    .apersoncontainer img{
+        width: 25%;
+    }
+    /* about end */
+
+    /* contact start */
+
+
+    /* contact end */
+
+    /* tutor start */
+    #tinputareawrapper{
+        width: 50%;
+        display: flex;
+        justify-self: center;
+        justify-content: center;
+    }
+
+    #tinputarea{
+        font-size: 1rem;
+        padding: 0 20px;
+    }
+
+    #tinputarea:focus{
+        padding: 0 20px;
+    }
+
+    #tinputsend{
+        width: auto;
+        padding: 20px;
+    }
+    /* tutor end */
+
+    /* error start */
+    #errormain a{
+        font-size: 1.5rem;
+    }
+    /* error end */
+}
