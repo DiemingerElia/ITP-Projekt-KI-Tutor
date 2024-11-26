@@ -84,6 +84,25 @@ main{
         align-self: center;
     }
 
+    #header nav button{ 
+        word-wrap: none;
+        white-space: none; 
+        color: var(--textColor); 
+        background-color: var(--backgroundColor); 
+        border: 0; 
+        height: min-content; 
+        padding: 20px; 
+        font-size: 1rem; 
+        margin: 20px; 
+        width: 75%; 
+        align-self: center; 
+        transition-duration: 0.1s; 
+    } 
+    
+    #header nav button:hover{ 
+        transform: scale(1.2); 
+    }
+
     #headerflex{
         height: 90%;
         width: 100%;
